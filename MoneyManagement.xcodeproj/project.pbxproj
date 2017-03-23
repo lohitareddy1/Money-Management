@@ -15,6 +15,22 @@
 		A0AF704B1E842A09003CEB87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AF70491E842A09003CEB87 /* LaunchScreen.storyboard */; };
 		A0AF70561E842A09003CEB87 /* MoneyManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF70551E842A09003CEB87 /* MoneyManagementTests.swift */; };
 		A0AF70611E842A09003CEB87 /* MoneyManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF70601E842A09003CEB87 /* MoneyManagementUITests.swift */; };
+		A0AF70881E843AC2003CEB87 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70871E843AC2003CEB87 /* libsqlite3.tbd */; };
+		A0AF708A1E843AC9003CEB87 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70891E843AC9003CEB87 /* libz.tbd */; };
+		A0AF708C1E843AD2003CEB87 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF708B1E843AD2003CEB87 /* SystemConfiguration.framework */; };
+		A0AF708E1E843ADE003CEB87 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF708D1E843ADE003CEB87 /* StoreKit.framework */; };
+		A0AF70901E843AE5003CEB87 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF708F1E843AE5003CEB87 /* Security.framework */; };
+		A0AF70921E843AEF003CEB87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70911E843AEF003CEB87 /* QuartzCore.framework */; };
+		A0AF70941E843AF6003CEB87 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70931E843AF6003CEB87 /* CoreLocation.framework */; };
+		A0AF70961E843AFE003CEB87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70951E843AFE003CEB87 /* CoreGraphics.framework */; };
+		A0AF70981E843B04003CEB87 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70971E843B04003CEB87 /* CFNetwork.framework */; };
+		A0AF709A1E843B0A003CEB87 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70991E843B0A003CEB87 /* AudioToolbox.framework */; };
+		A0AF709C1E843DF8003CEB87 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF709B1E843DF8003CEB87 /* SignupViewController.swift */; };
+		A0AF709E1E843E11003CEB87 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF709D1E843E11003CEB87 /* user.swift */; };
+		A0AF70A11E8456C3003CEB87 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF709F1E8456C3003CEB87 /* Bolts.framework */; };
+		A0AF70A21E8456C3003CEB87 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70A01E8456C3003CEB87 /* Parse.framework */; };
+		A0AF70EF1E84666B003CEB87 /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF70EE1E84666B003CEB87 /* UserHomeViewController.swift */; };
+		A0AF70F11E846683003CEB87 /* CashInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF70F01E846683003CEB87 /* CashInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +65,22 @@
 		A0AF705C1E842A09003CEB87 /* MoneyManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AF70601E842A09003CEB87 /* MoneyManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyManagementUITests.swift; sourceTree = "<group>"; };
 		A0AF70621E842A09003CEB87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0AF70871E843AC2003CEB87 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A0AF70891E843AC9003CEB87 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A0AF708B1E843AD2003CEB87 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A0AF708D1E843ADE003CEB87 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A0AF708F1E843AE5003CEB87 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A0AF70911E843AEF003CEB87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A0AF70931E843AF6003CEB87 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A0AF70951E843AFE003CEB87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A0AF70971E843B04003CEB87 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A0AF70991E843B0A003CEB87 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A0AF709B1E843DF8003CEB87 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		A0AF709D1E843E11003CEB87 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		A0AF709F1E8456C3003CEB87 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A0AF70A01E8456C3003CEB87 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A0AF70EE1E84666B003CEB87 /* UserHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHomeViewController.swift; path = ../UserHomeViewController.swift; sourceTree = "<group>"; };
+		A0AF70F01E846683003CEB87 /* CashInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +88,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0AF709A1E843B0A003CEB87 /* AudioToolbox.framework in Frameworks */,
+				A0AF70981E843B04003CEB87 /* CFNetwork.framework in Frameworks */,
+				A0AF70961E843AFE003CEB87 /* CoreGraphics.framework in Frameworks */,
+				A0AF70941E843AF6003CEB87 /* CoreLocation.framework in Frameworks */,
+				A0AF70921E843AEF003CEB87 /* QuartzCore.framework in Frameworks */,
+				A0AF70901E843AE5003CEB87 /* Security.framework in Frameworks */,
+				A0AF708E1E843ADE003CEB87 /* StoreKit.framework in Frameworks */,
+				A0AF708C1E843AD2003CEB87 /* SystemConfiguration.framework in Frameworks */,
+				A0AF70A11E8456C3003CEB87 /* Bolts.framework in Frameworks */,
+				A0AF708A1E843AC9003CEB87 /* libz.tbd in Frameworks */,
+				A0AF70A21E8456C3003CEB87 /* Parse.framework in Frameworks */,
+				A0AF70881E843AC2003CEB87 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +123,8 @@
 		A0AF70311E842A09003CEB87 = {
 			isa = PBXGroup;
 			children = (
+				A0AF709D1E843E11003CEB87 /* user.swift */,
+				A0AF706E1E84392A003CEB87 /* Frameworks */,
 				A0AF703C1E842A09003CEB87 /* MoneyManagement */,
 				A0AF70541E842A09003CEB87 /* MoneyManagementTests */,
 				A0AF705F1E842A09003CEB87 /* MoneyManagementUITests */,
@@ -99,9 +145,12 @@
 		A0AF703C1E842A09003CEB87 /* MoneyManagement */ = {
 			isa = PBXGroup;
 			children = (
+				A0AF70F01E846683003CEB87 /* CashInViewController.swift */,
+				A0AF70EE1E84666B003CEB87 /* UserHomeViewController.swift */,
 				A0AF703D1E842A09003CEB87 /* AppDelegate.swift */,
 				A0AF703F1E842A09003CEB87 /* ViewController.swift */,
 				A0AF70411E842A09003CEB87 /* Main.storyboard */,
+				A0AF709B1E843DF8003CEB87 /* SignupViewController.swift */,
 				A0AF70471E842A09003CEB87 /* Assets.xcassets */,
 				A0AF70491E842A09003CEB87 /* LaunchScreen.storyboard */,
 				A0AF704C1E842A09003CEB87 /* Info.plist */,
@@ -126,6 +175,25 @@
 				A0AF70621E842A09003CEB87 /* Info.plist */,
 			);
 			path = MoneyManagementUITests;
+			sourceTree = "<group>";
+		};
+		A0AF706E1E84392A003CEB87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0AF709F1E8456C3003CEB87 /* Bolts.framework */,
+				A0AF70A01E8456C3003CEB87 /* Parse.framework */,
+				A0AF70991E843B0A003CEB87 /* AudioToolbox.framework */,
+				A0AF70971E843B04003CEB87 /* CFNetwork.framework */,
+				A0AF70951E843AFE003CEB87 /* CoreGraphics.framework */,
+				A0AF70931E843AF6003CEB87 /* CoreLocation.framework */,
+				A0AF70911E843AEF003CEB87 /* QuartzCore.framework */,
+				A0AF708F1E843AE5003CEB87 /* Security.framework */,
+				A0AF708D1E843ADE003CEB87 /* StoreKit.framework */,
+				A0AF708B1E843AD2003CEB87 /* SystemConfiguration.framework */,
+				A0AF70891E843AC9003CEB87 /* libz.tbd */,
+				A0AF70871E843AC2003CEB87 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0AF70EF1E84666B003CEB87 /* UserHomeViewController.swift in Sources */,
+				A0AF70F11E846683003CEB87 /* CashInViewController.swift in Sources */,
+				A0AF709E1E843E11003CEB87 /* user.swift in Sources */,
 				A0AF70401E842A09003CEB87 /* ViewController.swift in Sources */,
 				A0AF703E1E842A09003CEB87 /* AppDelegate.swift in Sources */,
+				A0AF709C1E843DF8003CEB87 /* SignupViewController.swift in Sources */,
 				A0AF70461E842A09003CEB87 /* MoneyManagement.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,8 +488,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MoneyManagement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.nwmissouri.MoneyManagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -428,8 +508,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MoneyManagement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.nwmissouri.MoneyManagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -509,6 +597,7 @@
 				A0AF70671E842A09003CEB87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0AF70681E842A09003CEB87 /* Build configuration list for PBXNativeTarget "MoneyManagementTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +606,7 @@
 				A0AF706A1E842A09003CEB87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0AF706B1E842A09003CEB87 /* Build configuration list for PBXNativeTarget "MoneyManagementUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +615,7 @@
 				A0AF706D1E842A09003CEB87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
