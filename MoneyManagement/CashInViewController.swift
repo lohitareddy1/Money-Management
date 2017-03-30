@@ -7,19 +7,52 @@
 //
 
 import UIKit
+import Parse
 
 class CashInViewController: UIViewController {
 
+    @IBOutlet weak var transactionsDisp: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        transactionsDisp.text = " "
+        retrieveAllTransactions()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func retrieveAllTransactions() {
+        let query = PFQuery(className: "Transaction")
+        query.whereKey("userID", equalTo: "")
+        query.findObjectsInBackground { ( transactions:[PFObject]?, err: Error?) in
+            if err == nil {
+                
+                let transs = transactions as! [Transaction]
+                
+                for transaction in transs {
+                   // let trans = transaction as! Transaction
+                    
+                    
+                    print("1 ", transaction["name"] as! String)
+                    
+                   // self.transactionsDisp.text += (trans["name"])
+                }
+                
+            }
+        }
+        
+        
+    }
+    
     
 
     /*
