@@ -11,6 +11,8 @@ import Parse
 
 class Transaction: PFObject, PFSubclassing {
     @NSManaged var name:String!
+    @NSManaged var amount:String!
+    @NSManaged var cashInType:String!
     @NSManaged var bank:String!
     @NSManaged var userID:String!
     

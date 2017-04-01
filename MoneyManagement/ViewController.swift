@@ -24,6 +24,16 @@ class ViewController: UIViewController {
         user = (UIApplication.shared.delegate as! AppDelegate).user
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if(PFUser.current() != nil ){
+            print("viewWillAppear if is true ", PFUser.current())
+            self.performSegue(withIdentifier: "userHomeTSegue", sender: nil)
+        }
+        else {
+            print("viewWillAppear", PFUser.current())
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         
         loginBtn.layer.cornerRadius = 5
@@ -41,6 +51,7 @@ class ViewController: UIViewController {
         
         if ( username.text != nil && password.text != nil ) {
             user.auth( username.text!, password: password.text!)
+            print("Current User",PFUser.current())
             if( PFUser.current() != nil ){
                 print("user logged in", PFUser.current())
                 self.performSegue(withIdentifier: "userHomeTSegue", sender: nil)

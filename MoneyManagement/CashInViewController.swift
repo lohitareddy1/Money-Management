@@ -20,8 +20,7 @@ class CashInViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         transactionsDisp.text = " "
-        retrieveAllTransactions()
-        
+        self.retrieveAllTransactions()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,26 +30,26 @@ class CashInViewController: UIViewController {
     
     
     func retrieveAllTransactions() {
+        print("triggered all transactions")
         let query = PFQuery(className: "Transaction")
-        query.whereKey("userID", equalTo: "")
+        //query.whereKey("userID", equalTo: "")
         query.findObjectsInBackground { ( transactions:[PFObject]?, err: Error?) in
             if err == nil {
-                
+                print("Transactions", transactions ?? "transaction")
                 let transs = transactions as! [Transaction]
                 
                 for transaction in transs {
                    // let trans = transaction as! Transaction
-                    
-                    
+                    self.transactionsDisp.text.append((transaction["name"] as! String) + "\n")
                     print("1 ", transaction["name"] as! String)
                     
                    // self.transactionsDisp.text += (trans["name"])
                 }
-                
+            }
+            else {
+                print("Error", err)
             }
         }
-        
-        
     }
     
     

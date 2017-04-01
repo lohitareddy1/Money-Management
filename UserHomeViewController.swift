@@ -7,13 +7,18 @@
 //
 
 import UIKit
-
+import Parse
 class UserHomeViewController: UIViewController {
 
+    @IBOutlet weak var loggedUser: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loggedUser.text = "Hi " + (PFUser.current()?.username!)!
     }
 
     override func didReceiveMemoryWarning() {
