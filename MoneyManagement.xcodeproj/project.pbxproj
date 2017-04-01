@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FD2E49A1E902A05001AB290 /* CashInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */; };
 		A048C0B71E8C837B00F41AD9 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048C0B61E8C837B00F41AD9 /* TransactionModel.swift */; };
 		A0534C2A1E900A8B0026DB6F /* AddCashInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0534C291E900A8B0026DB6F /* AddCashInViewController.swift */; };
 		A0AF703E1E842A09003CEB87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF703D1E842A09003CEB87 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashInTableViewCell.swift; sourceTree = "<group>"; };
 		A048C0B61E8C837B00F41AD9 /* TransactionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		A0534C291E900A8B0026DB6F /* AddCashInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCashInViewController.swift; sourceTree = "<group>"; };
 		A0AF703A1E842A09003CEB87 /* MoneyManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +82,7 @@
 		A0AF70971E843B04003CEB87 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A0AF70991E843B0A003CEB87 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A0AF709B1E843DF8003CEB87 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		A0AF709D1E843E11003CEB87 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		A0AF709D1E843E11003CEB87 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = user.swift; path = ../user.swift; sourceTree = "<group>"; };
 		A0AF709F1E8456C3003CEB87 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A0AF70A01E8456C3003CEB87 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A0AF70EE1E84666B003CEB87 /* UserHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHomeViewController.swift; path = ../UserHomeViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		A0534C2B1E900D710026DB6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A0AF709D1E843E11003CEB87 /* user.swift */,
 				A048C0B61E8C837B00F41AD9 /* TransactionModel.swift */,
 			);
 			name = Models;
@@ -135,7 +138,6 @@
 		A0AF70311E842A09003CEB87 = {
 			isa = PBXGroup;
 			children = (
-				A0AF709D1E843E11003CEB87 /* user.swift */,
 				A0AF706E1E84392A003CEB87 /* Frameworks */,
 				A0AF703C1E842A09003CEB87 /* MoneyManagement */,
 				A0AF70541E842A09003CEB87 /* MoneyManagementTests */,
@@ -169,6 +171,7 @@
 				A0AF70491E842A09003CEB87 /* LaunchScreen.storyboard */,
 				A0AF704C1E842A09003CEB87 /* Info.plist */,
 				A0AF70441E842A09003CEB87 /* MoneyManagement.xcdatamodeld */,
+				6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */,
 			);
 			path = MoneyManagement;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				A0AF709E1E843E11003CEB87 /* user.swift in Sources */,
 				A0AF70401E842A09003CEB87 /* ViewController.swift in Sources */,
 				A048C0B71E8C837B00F41AD9 /* TransactionModel.swift in Sources */,
+				6FD2E49A1E902A05001AB290 /* CashInTableViewCell.swift in Sources */,
 				A0AF703E1E842A09003CEB87 /* AppDelegate.swift in Sources */,
 				A0AF709C1E843DF8003CEB87 /* SignupViewController.swift in Sources */,
 				A0534C2A1E900A8B0026DB6F /* AddCashInViewController.swift in Sources */,

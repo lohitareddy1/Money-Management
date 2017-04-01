@@ -13,7 +13,7 @@ class AddCashInViewController: UIViewController {
     @IBOutlet weak var cashInType: UISegmentedControl!
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var from: UITextField!
-    var cashInTypes:[String] = ["income", "lent"]
+    var cashInTypes:[String] = ["income", "borrowed"]
     override func viewDidLoad() {
         super.viewDidLoad()
 

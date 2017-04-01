@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class CashInViewController: UIViewController {
+class CashInViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var transactionsDisp: UITextView!
     override func viewDidLoad() {
@@ -17,6 +17,9 @@ class CashInViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+   
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
         transactionsDisp.text = " "
@@ -28,6 +31,13 @@ class CashInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
     
     func retrieveAllTransactions() {
         print("triggered all transactions")
