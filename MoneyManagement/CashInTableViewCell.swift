@@ -15,6 +15,7 @@ class CashInTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var cashinType: UILabel!
     @IBOutlet weak var name: UILabel!

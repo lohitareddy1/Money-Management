@@ -12,6 +12,7 @@ import Parse
 class CashInViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var transactionsDisp: UITextView!
+    var transactions:[Transaction]!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,9 +36,13 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         return 1
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = CashInTableViewCell()
+       
+        return cell
     }
+    
     
     func retrieveAllTransactions() {
         print("triggered all transactions")

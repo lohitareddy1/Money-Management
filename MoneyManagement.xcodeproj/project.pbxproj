@@ -10,6 +10,7 @@
 		6FD2E49A1E902A05001AB290 /* CashInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */; };
 		A048C0B71E8C837B00F41AD9 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048C0B61E8C837B00F41AD9 /* TransactionModel.swift */; };
 		A0534C2A1E900A8B0026DB6F /* AddCashInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0534C291E900A8B0026DB6F /* AddCashInViewController.swift */; };
+		A0534C301E9056780026DB6F /* cashOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0534C2F1E9056780026DB6F /* cashOutViewController.swift */; };
 		A0AF703E1E842A09003CEB87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF703D1E842A09003CEB87 /* AppDelegate.swift */; };
 		A0AF70401E842A09003CEB87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF703F1E842A09003CEB87 /* ViewController.swift */; };
 		A0AF70431E842A09003CEB87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AF70411E842A09003CEB87 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashInTableViewCell.swift; sourceTree = "<group>"; };
 		A048C0B61E8C837B00F41AD9 /* TransactionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		A0534C291E900A8B0026DB6F /* AddCashInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCashInViewController.swift; sourceTree = "<group>"; };
+		A0534C2F1E9056780026DB6F /* cashOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cashOutViewController.swift; sourceTree = "<group>"; };
 		A0AF703A1E842A09003CEB87 /* MoneyManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AF703D1E842A09003CEB87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0AF703F1E842A09003CEB87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,32 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		A0534C2C1E9034950026DB6F /* cashIn */ = {
+			isa = PBXGroup;
+			children = (
+				6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */,
+				A0534C291E900A8B0026DB6F /* AddCashInViewController.swift */,
+				A0AF70F01E846683003CEB87 /* CashInViewController.swift */,
+			);
+			name = cashIn;
+			sourceTree = "<group>";
+		};
+		A0534C2D1E9034A90026DB6F /* user */ = {
+			isa = PBXGroup;
+			children = (
+				A0AF703F1E842A09003CEB87 /* ViewController.swift */,
+				A0AF709B1E843DF8003CEB87 /* SignupViewController.swift */,
+			);
+			name = user;
+			sourceTree = "<group>";
+		};
+		A0534C2E1E9034D10026DB6F /* cashout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = cashout;
+			sourceTree = "<group>";
+		};
 		A0AF70311E842A09003CEB87 = {
 			isa = PBXGroup;
 			children = (
@@ -159,19 +187,18 @@
 		A0AF703C1E842A09003CEB87 /* MoneyManagement */ = {
 			isa = PBXGroup;
 			children = (
+				A0534C2E1E9034D10026DB6F /* cashout */,
+				A0534C2D1E9034A90026DB6F /* user */,
+				A0534C2C1E9034950026DB6F /* cashIn */,
 				A0534C2B1E900D710026DB6F /* Models */,
-				A0AF70F01E846683003CEB87 /* CashInViewController.swift */,
 				A0AF70EE1E84666B003CEB87 /* UserHomeViewController.swift */,
-				A0534C291E900A8B0026DB6F /* AddCashInViewController.swift */,
 				A0AF703D1E842A09003CEB87 /* AppDelegate.swift */,
-				A0AF703F1E842A09003CEB87 /* ViewController.swift */,
 				A0AF70411E842A09003CEB87 /* Main.storyboard */,
-				A0AF709B1E843DF8003CEB87 /* SignupViewController.swift */,
+				A0534C2F1E9056780026DB6F /* cashOutViewController.swift */,
 				A0AF70471E842A09003CEB87 /* Assets.xcassets */,
 				A0AF70491E842A09003CEB87 /* LaunchScreen.storyboard */,
 				A0AF704C1E842A09003CEB87 /* Info.plist */,
 				A0AF70441E842A09003CEB87 /* MoneyManagement.xcdatamodeld */,
-				6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */,
 			);
 			path = MoneyManagement;
 			sourceTree = "<group>";
@@ -347,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0534C301E9056780026DB6F /* cashOutViewController.swift in Sources */,
 				A0AF70EF1E84666B003CEB87 /* UserHomeViewController.swift in Sources */,
 				A0AF70F11E846683003CEB87 /* CashInViewController.swift in Sources */,
 				A0AF709E1E843E11003CEB87 /* user.swift in Sources */,
