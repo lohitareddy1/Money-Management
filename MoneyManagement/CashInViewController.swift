@@ -11,8 +11,11 @@ import Parse
 
 class CashInViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    @IBOutlet weak var transactionsDisp: UITextView!
+   
     var transactions:[Transaction]!
+    
+    @IBOutlet weak var CurrentSegment: UISegmentedControl!
+    @IBOutlet weak var transactionTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,23 +26,58 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
-        transactionsDisp.text = " "
+     
         self.retrieveAllTransactions()
+        doChangesByCurrentSegment()
     }
 
+    
+    func doChangesByCurrentSegment(){
+//        switch(CurrentSegment.selectedSegmentIndex) {
+//        case 0: transactionTable.isHidden = false
+//        //BorrowedView.isHidden = true
+//            
+//        case 1:
+//            incomeView.isHidden = true
+//            BorrowedView.isHidden = false
+//        default:
+//            incomeView.isHidden = false
+//            BorrowedView.isHidden = true
+//        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        //print("numberofRows", transactions)
+        if transactions != nil {
+            return transactions.count
+        }
+        else {
+            return 0
+        }
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CashInTableViewCell()
+      let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CashInTableViewCell
        
+        if transactions != nil {
+
+            cell.amount.text = String((transactions[indexPath.row])["amount"] as! Double )
+            cell.name.text = (transactions[indexPath.row])["name"] as! String
+            cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+        }
+        else {
+            cell.amount.text = "3000"
+            cell.name.text = "Dummy"
+            cell.cashinType.text = "income"
+        }
+        
         return cell
     }
     
@@ -51,11 +89,12 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         query.findObjectsInBackground { ( transactions:[PFObject]?, err: Error?) in
             if err == nil {
                 print("Transactions", transactions ?? "transaction")
-                let transs = transactions as! [Transaction]
-                
-                for transaction in transs {
+                 self.transactions = transactions as! [Transaction]
+                self.transactionTable.reloadData()
+                for transaction in self.transactions {
                    // let trans = transaction as! Transaction
-                    self.transactionsDisp.text.append((transaction["name"] as! String) + "\n")
+                
+                    
                     print("1 ", transaction["name"] as! String)
                     
                    // self.transactionsDisp.text += (trans["name"])

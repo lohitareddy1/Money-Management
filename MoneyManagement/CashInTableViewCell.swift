@@ -14,7 +14,8 @@ class CashInTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    
     
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var cashinType: UILabel!

@@ -10,13 +10,120 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoneyManagement/CashInViewController.swift"
-            timestampString = "512767610.582385"
+            timestampString = "512870397.778133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "retrieveAllTransactions()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoneyManagement/AddCashInViewController.swift"
+            timestampString = "512859888.958247"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "AddCashInViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoneyManagement.AddCashInViewController.__deallocating_deinit"
+                  moduleName = "MoneyManagement"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s528170/Desktop/moneymanagement/MoneyManagement/AddCashInViewController.swift"
+                  timestampString = "512859894.22761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoneyManagement.AddCashInViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MoneyManagement.AddCashInViewController"
+                  moduleName = "MoneyManagement"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s528170/Desktop/moneymanagement/MoneyManagement/AddCashInViewController.swift"
+                  timestampString = "512859894.250865"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoneyManagement.AddCashInViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MoneyManagement.AddCashInViewController"
+                  moduleName = "MoneyManagement"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s528170/Desktop/moneymanagement/MoneyManagement/AddCashInViewController.swift"
+                  timestampString = "512859894.252711"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoneyManagement.AddCashInViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MoneyManagement.AddCashInViewController&gt;"
+                  moduleName = "MoneyManagement"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s528170/Desktop/moneymanagement/MoneyManagement/AddCashInViewController.swift"
+                  timestampString = "512859894.254476"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoneyManagement.AddCashInViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MoneyManagement.AddCashInViewController&gt;"
+                  moduleName = "MoneyManagement"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/s528170/Desktop/moneymanagement/MoneyManagement/AddCashInViewController.swift"
+                  timestampString = "512859894.256495"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoneyManagement/CashInTableViewCell.swift"
+            timestampString = "512864310.264208"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

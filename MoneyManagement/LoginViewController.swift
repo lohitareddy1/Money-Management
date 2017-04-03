@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var username: UITextField!
@@ -22,6 +22,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         user = (UIApplication.shared.delegate as! AppDelegate).user
+        if(PFUser.current() != nil ){
+            print("viewWillAppear if is true ", PFUser.current())
+            self.performSegue(withIdentifier: "userHomeTSegue", sender: nil)
+        }
+        else {
+            print("viewWillAppear", PFUser.current())
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -8,7 +8,7 @@
 
 import UIKit
 import Parse
-class AddCashInViewController: UIViewController {
+class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var cashInType: UISegmentedControl!
     @IBOutlet weak var amount: UITextField!
@@ -19,13 +19,35 @@ class AddCashInViewController: UIViewController {
     @IBOutlet weak var incomeDate: UITextField!
     @IBOutlet weak var borrowedDate: UITextField!
     @IBOutlet weak var from: UITextField!
+    
+    @IBOutlet weak var recurringSwitch: UISwitch!
+    @IBOutlet weak var RecurringEvery: UIPickerView!
+   
+    @IBOutlet weak var recurringLabel: UILabel!
     var cashInTypes:[String] = ["income", "borrowed"]
+    var RecureingTimes = ["Weekly", "Monthly", "Quaterly", "Yearly"]
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+       RecurringEvery.delegate = self
+        RecurringEvery.dataSource = self
         self.navigationItem.title = "CashIn"
         self.navigationItem.titleView?.sizeToFit()
         // Do any additional setup after loading the view.
     }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return RecureingTimes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return RecureingTimes.count
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -39,6 +61,17 @@ class AddCashInViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func recurringValueChanged(_ sender: Any) {
+        if recurringSwitch.isOn {
+            recurringLabel.isHidden = false
+            RecurringEvery.isHidden = false
+        }
+        else {
+            recurringLabel.isHidden = true
+            RecurringEvery.isHidden = true
+        }
+        
     }
     
     @IBAction func cashInTypeValueChanged(_ sender: Any) {
@@ -61,7 +94,7 @@ class AddCashInViewController: UIViewController {
     @IBAction func addCashIn(_ sender: Any) {
         let transaction = PFObject(className: "Transaction")
         transaction["name"] = source.text
-        transaction["amount"] = Double(amount.text!)!
+        transaction["amount1"] = Double(amount.text!)!
         transaction["cashInType"] = cashInTypes[cashInType.selectedSegmentIndex] // just to demo we can store other types ...
         transaction.saveInBackground(block: { (success, error) -> Void in
             if( error == nil) {
