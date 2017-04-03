@@ -65,6 +65,7 @@ class LoginViewController: UIViewController {
                 
             }
             else {
+                self.displayAlertWithTitle("Invalid Credentials!", message:"Login Failure")
                 print("user not logged in")
             }
         }
@@ -77,6 +78,14 @@ class LoginViewController: UIViewController {
     @IBAction func unwindToLgnView( sender: UIStoryboardSegue ) {
         
     }
-
+    
+    func displayAlertWithTitle(_ title:String, message:String){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
 }
 

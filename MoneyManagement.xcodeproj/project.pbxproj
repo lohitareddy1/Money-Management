@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6FD2E49A1E902A05001AB290 /* CashInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */; };
+		A02AE42A1E91EBC200E9AA7B /* userProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02AE4291E91EBC200E9AA7B /* userProfileViewController.swift */; };
 		A048C0B71E8C837B00F41AD9 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A048C0B61E8C837B00F41AD9 /* TransactionModel.swift */; };
 		A0534C2A1E900A8B0026DB6F /* AddCashInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0534C291E900A8B0026DB6F /* AddCashInViewController.swift */; };
 		A0534C301E9056780026DB6F /* cashOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0534C2F1E9056780026DB6F /* cashOutViewController.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashInTableViewCell.swift; sourceTree = "<group>"; };
+		A02AE4291E91EBC200E9AA7B /* userProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userProfileViewController.swift; sourceTree = "<group>"; };
 		A048C0B61E8C837B00F41AD9 /* TransactionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		A0534C291E900A8B0026DB6F /* AddCashInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCashInViewController.swift; sourceTree = "<group>"; };
 		A0534C2F1E9056780026DB6F /* cashOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cashOutViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		A0534C2D1E9034A90026DB6F /* user */ = {
 			isa = PBXGroup;
 			children = (
+				A02AE4291E91EBC200E9AA7B /* userProfileViewController.swift */,
 				A0AF70EE1E84666B003CEB87 /* UserHomeViewController.swift */,
 				A0AF703F1E842A09003CEB87 /* LoginViewController.swift */,
 				A0AF709B1E843DF8003CEB87 /* SignupViewController.swift */,
@@ -375,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0534C301E9056780026DB6F /* cashOutViewController.swift in Sources */,
+				A02AE42A1E91EBC200E9AA7B /* userProfileViewController.swift in Sources */,
 				A0AF70EF1E84666B003CEB87 /* UserHomeViewController.swift in Sources */,
 				A0AF70F11E846683003CEB87 /* CashInViewController.swift in Sources */,
 				A0AF709E1E843E11003CEB87 /* user.swift in Sources */,

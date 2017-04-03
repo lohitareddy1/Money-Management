@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignupViewController: UIViewController {
 
@@ -35,9 +36,30 @@ class SignupViewController: UIViewController {
             if ( password.text! == rePassword.text! ){
                 print(uname.text!, email.text!, password.text!)
                 
-                user.register(uname.text!, email: email.text!, password: password.text!)
+                //user.register(uname.text!, email: email.text!, password: password.text!)
+                let user = PFUser()
+                user.username = uname.text!
+                user.password = password.text!
+                user.email = email.text!
+                
+                user.signUpInBackground {
+                    (success, error) -> Void in
+                    if let error = error as NSError? {
+                        let errorString = error.userInfo["error"] as? NSString
+                        // In case something went wrong, use errorString to get the error
+                        self.displayAlertWithTitle("Error", message:"\(errorString)")
+                        
+                    } else {
+                        // Everything went okay
+                        self.displayAlertWithTitle("Success", message:"Successfully registered")
+                        print("User registered",success)
+                        
+                    }
+                }
+                
             }
             else{
+                self.displayAlertWithTitle("Error", message:"Both Passwords should be same")
                 print("both the passwords should be same")
             }
         }
@@ -55,5 +77,11 @@ class SignupViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func displayAlertWithTitle(_ title:String, message:String){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
