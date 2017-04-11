@@ -19,17 +19,23 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     @IBOutlet weak var incomeDate: UITextField!
     @IBOutlet weak var borrowedDate: UITextField!
     @IBOutlet weak var from: UITextField!
+    @IBOutlet weak var repayDate: UITextField!
+    
+    @IBOutlet weak var isFuture: UISwitch!
     
     @IBOutlet weak var recurringSwitch: UISwitch!
+    @IBOutlet weak var addNotes: UITextView!
+   
     @IBOutlet weak var RecurringEvery: UIPickerView!
    
     @IBOutlet weak var recurringLabel: UILabel!
+    
     var cashInTypes:[String] = ["income", "borrowed"]
     var RecureingTimes = ["Weekly", "Monthly", "Quaterly", "Yearly"]
     override func viewDidLoad() {
         super.viewDidLoad()
     
-       RecurringEvery.delegate = self
+        RecurringEvery.delegate = self
         RecurringEvery.dataSource = self
         self.navigationItem.title = "CashIn"
         self.navigationItem.titleView?.sizeToFit()
@@ -62,6 +68,7 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func recurringValueChanged(_ sender: Any) {
         if recurringSwitch.isOn {
             recurringLabel.isHidden = false
@@ -71,7 +78,7 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             recurringLabel.isHidden = true
             RecurringEvery.isHidden = true
         }
-        
+
     }
     
     @IBAction func cashInTypeValueChanged(_ sender: Any) {
@@ -93,9 +100,31 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     @IBAction func addCashIn(_ sender: Any) {
         let transaction = PFObject(className: "Transaction")
-        transaction["name"] = source.text
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/YYYY"
+        
         transaction["amount1"] = Double(amount.text!)!
         transaction["cashInType"] = cashInTypes[cashInType.selectedSegmentIndex] // just to demo we can store other types ...
+        if transaction["cashInType"] as! String == "income" {
+            transaction["source"] = source.text
+            
+
+            
+            transaction["date"] =  formatter.date(from: incomeDate.text! )
+            transaction["isfuture"] = isFuture.isOn
+            transaction["isrecurring"] = recurringSwitch.isOn
+            if transaction["isrecurring"] as! Bool {
+                transaction["recurringevery"] = RecureingTimes[Int(RecurringEvery.selectedRow(inComponent: 0).description)!]
+            }
+        }
+        else if transaction["cashInType"] as! String == "borrowed"  {
+            transaction["borrowedFrom"] = from.text
+            transaction["borrowedDate"] = formatter.date(from: borrowedDate.text!);
+            transaction["borrowedRepayDate"] = formatter.date(from: repayDate.text!);
+        }
+        
+        transaction["addnotes"] = addNotes.text ?? ""
+        print("trasaction", transaction);
         transaction.saveInBackground(block: { (success, error) -> Void in
             if( error == nil) {
                 print("transaction has been saved.", success)
@@ -105,7 +134,15 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             }
         })
     }
-
+    
+    func displayAlertWithTitle(_ title:String, message:String){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     /*
     // MARK: - Navigation
 

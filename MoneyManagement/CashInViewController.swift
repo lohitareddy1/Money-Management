@@ -16,6 +16,9 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     @IBOutlet weak var CurrentSegment: UISegmentedControl!
     @IBOutlet weak var transactionTable: UITableView!
+    var cashInTypes = ["income", "futureincome", "borrowed"]
+    var cashInSelected:String = "income"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,24 +29,19 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
-     
-        self.retrieveAllTransactions()
-        doChangesByCurrentSegment()
+        performActionsByCurrentSegment()
+        self.retrieveTransactions(of: cashInSelected)
+        
     }
 
     
-    func doChangesByCurrentSegment(){
-//        switch(CurrentSegment.selectedSegmentIndex) {
-//        case 0: transactionTable.isHidden = false
-//        //BorrowedView.isHidden = true
-//            
-//        case 1:
-//            incomeView.isHidden = true
-//            BorrowedView.isHidden = false
-//        default:
-//            incomeView.isHidden = false
-//            BorrowedView.isHidden = true
-//        }
+    @IBAction func doChangesByCurrentSegment(_ sender: Any) {
+            performActionsByCurrentSegment()
+    }
+    
+    func performActionsByCurrentSegment(){
+        cashInSelected = cashInTypes[CurrentSegment.selectedSegmentIndex]
+        retrieveTransactions(of: cashInSelected)
     }
     
     
@@ -67,10 +65,25 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
       let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CashInTableViewCell
        
         if transactions != nil {
-
-            cell.amount.text = String((transactions[indexPath.row])["amount"] as! Double )
-            cell.name.text = (transactions[indexPath.row])["name"] as! String
-            cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+        
+            if cashInSelected == "income" {
+                print("income")
+                cell.amount.text = String((transactions[indexPath.row])["amount1"] as! Double )
+                cell.name.text = (transactions[indexPath.row])["source"] as! String
+                cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+            }
+            else if cashInSelected == "borrowed" {
+                print("borrowed")
+                cell.amount.text = String((transactions[indexPath.row])["amount1"] as! Double )
+                cell.name.text = (transactions[indexPath.row])["borrowedFrom"] as! String
+                cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+            }
+            else if cashInSelected == "futureincome" {
+                print("future income")
+                cell.amount.text = String((transactions[indexPath.row])["amount1"] as! Double )
+                cell.name.text = (transactions[indexPath.row])["source"] as! String
+                cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+            }
         }
         else {
             cell.amount.text = "3000"
@@ -82,10 +95,20 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     
-    func retrieveAllTransactions() {
+    func retrieveTransactions(of:String) {
         print("triggered all transactions")
         let query = PFQuery(className: "Transaction")
-        //query.whereKey("userID", equalTo: "")
+        
+        if cashInSelected == "futureincome" {
+            query.whereKey("cashInType", equalTo: "income" )
+            query.whereKey("isfuture", equalTo: true )
+            print("futureincome")
+        }
+        else{
+            query.whereKey("cashInType", equalTo: of )
+            print(of)
+        }
+        
         query.findObjectsInBackground { ( transactions:[PFObject]?, err: Error?) in
             if err == nil {
                 print("Transactions", transactions ?? "transaction")
@@ -95,7 +118,7 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
                    // let trans = transaction as! Transaction
                 
                     
-                    print("1 ", transaction["name"] as! String)
+                   print("1 ", transaction["cashInType"] as! String)
                     
                    // self.transactionsDisp.text += (trans["name"])
                 }
