@@ -63,6 +63,29 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
     }
     
+     func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        let more = UITableViewRowAction(style: .normal, title: "More") { action, index in
+            print("more button tapped")
+        }
+        more.backgroundColor = .blue
+        
+        
+        let favorite = UITableViewRowAction(style: .normal, title: "Settled") { action, index in
+            print("favorite button tapped")
+        }
+        favorite.backgroundColor = .orange
+        
+        let share = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+            print("share button tapped")
+        }
+        share.backgroundColor = .red
+        
+        return [share, favorite, more]
+    }
+    
+     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CashInTableViewCell
