@@ -20,6 +20,7 @@ class CashInTableViewCell: UITableViewCell {
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var cashinType: UILabel!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var date: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

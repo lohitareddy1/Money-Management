@@ -19,6 +19,9 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
     var cashInTypes = ["income", "futureincome", "borrowed"]
     var cashInSelected:String = "income"
     
+    let formatter = DateFormatter()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +66,7 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CashInTableViewCell
-       
+       formatter.dateFormat = "MMM dd, yyyy"
         if transactions != nil {
         
             if cashInSelected == "income" {
@@ -71,18 +74,22 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
                 cell.amount.text = String((transactions[indexPath.row])["amount1"] as! Double )
                 cell.name.text = (transactions[indexPath.row])["source"] as! String
                 cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+                cell.date.text = formatter.string(from: (transactions[indexPath.row])["date"] as! Date )
+                //cell.date.text = String(describing: (transactions[indexPath.row])["date"] as! Date)
             }
             else if cashInSelected == "borrowed" {
                 print("borrowed")
                 cell.amount.text = String((transactions[indexPath.row])["amount1"] as! Double )
                 cell.name.text = (transactions[indexPath.row])["borrowedFrom"] as! String
                 cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+                cell.date.text = formatter.string(from: (transactions[indexPath.row])["borrowedRepayDate"] as! Date )
             }
             else if cashInSelected == "futureincome" {
                 print("future income")
                 cell.amount.text = String((transactions[indexPath.row])["amount1"] as! Double )
                 cell.name.text = (transactions[indexPath.row])["source"] as! String
                 cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+                cell.date.text = formatter.string(from: (transactions[indexPath.row])["date"] as! Date )
             }
         }
         else {
@@ -102,10 +109,17 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         if cashInSelected == "futureincome" {
             query.whereKey("cashInType", equalTo: "income" )
             query.whereKey("isfuture", equalTo: true )
+            query.addAscendingOrder("date")
             print("futureincome")
         }
-        else{
+        else if cashInSelected == "borrowed" {
             query.whereKey("cashInType", equalTo: of )
+            query.addAscendingOrder("borrowedFrom")
+            print(of)
+        }
+        else if cashInSelected == "income" {
+            query.whereKey("cashInType", equalTo: of )
+            query.addDescendingOrder("date")
             print(of)
         }
         
