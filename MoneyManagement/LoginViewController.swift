@@ -58,20 +58,31 @@ class LoginViewController: UIViewController {
     @IBAction func loginAction(_ sender: Any) {
         
         if ( username.text != nil && password.text != nil ) {
-            user.auth( username.text!, password: password.text!)
-            print("Current User",PFUser.current())
-            if( PFUser.current() != nil ){
-                print("user logged in", PFUser.current())
-                self.performSegue(withIdentifier: "userHomeTSegue", sender: nil)
-                
-            }
-            else {
-                self.displayAlertWithTitle("Invalid Credentials!", message:"Login Failure")
-                print("user not logged in")
-            }
+            //user.auth( username.text!, password: password.text!)
+            let uname = username.text!
+            let password = self.password.text!
+            PFUser.logInWithUsername(inBackground: uname, password: password,
+                                     block: {(user, error) -> Void in
+                                        if let error = error as NSError? {
+                                            let errorString = error.userInfo["error"] as? NSString
+                                            // In case something went wrong...
+                                            print("login failure")
+                                            self.displayAlertWithTitle("Login failure", message:errorString as! String )
+                                            print("user not logged in")
+
+                                            
+                                        }
+                                        else {
+                                            // Everything went alright here
+                                            self.performSegue(withIdentifier: "userHomeTSegue", sender: nil)
+                                            print("login successfull")
+                                            
+                                        }
+            })
+            
         }
         else {
-            print("both username and password are required fields")
+            print("both username and password are required to login")
         }
         
     }
