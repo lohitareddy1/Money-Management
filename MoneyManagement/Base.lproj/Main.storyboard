@@ -204,7 +204,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s32-aq-pHk">
                                 <rect key="frame" x="67" y="398" width="138" height="21"/>
@@ -660,7 +660,7 @@
                                     <color key="titleColor" red="1" green="0.97821652260000003" blue="0.99738148849999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ajs-dc-lgc" kind="show" id="ZfD-L5-aY5"/>
+                                    <segue destination="ajs-dc-lgc" kind="show" id="49Y-Pb-lWV"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-du-8EI">
@@ -679,12 +679,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxC-hr-tT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3287" y="1146"/>
+            <point key="canvasLocation" x="3348" y="642"/>
         </scene>
-        <!--Cash Out View Controller-->
+        <!--Add Cash Out View Controller-->
         <scene sceneID="Gaw-fP-2uW">
             <objects>
-                <viewController id="ajs-dc-lgc" customClass="cashOutViewController" customModule="MoneyManagement" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ajs-dc-lgc" customClass="AddCashOutViewController" customModule="MoneyManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nqH-ip-rk8"/>
                         <viewControllerLayoutGuide type="bottom" id="rbF-KL-RvQ"/>
@@ -1449,7 +1449,7 @@
         <image name="User-30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="49Y-Pb-lWV"/>
         <segue reference="d6h-MP-asx"/>
-        <segue reference="Pxf-hh-N5H"/>
     </inferredMetricsTieBreakers>
 </document>

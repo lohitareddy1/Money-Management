@@ -32,13 +32,7 @@ class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if(PFUser.current() != nil ){
-            print("viewWillAppear if is true ", PFUser.current())
-            self.performSegue(withIdentifier: "userHomeTSegue", sender: nil)
-        }
-        else {
-            print("viewWillAppear", PFUser.current())
-        }
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +40,13 @@ class LoginViewController: UIViewController {
         loginBtn.layer.cornerRadius = 5
         loginBtn.layer.borderWidth = 1
         loginBtn.layer.borderColor = UIColor.white.cgColor
+        if(PFUser.current() != nil ){
+            print("viewWillAppear if is true ", PFUser.current())
+            self.performSegue(withIdentifier: "userHomeTSegue", sender: nil)
+        }
+        else {
+            print("viewWillAppear", PFUser.current())
+        }
         
     }
 
