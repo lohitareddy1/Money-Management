@@ -83,6 +83,7 @@ class AddCashOutViewController: UIViewController {
         dateType = "lentDate"
         lentBackDateView.isHidden = false
         lentDate.isHidden = true
+        lentBackDate.isHidden=false
     }
     
     @IBAction func doneLentBackDateCLicked(_ sender: Any) {
@@ -116,6 +117,7 @@ class AddCashOutViewController: UIViewController {
         dateType = "lentBackDate"
         lentBackDate.isHidden = true
         lentBackDateView.isHidden = false
+        lentDate.isHidden=false
     }
     
     @IBAction func addCashOut(_ sender: Any) {
