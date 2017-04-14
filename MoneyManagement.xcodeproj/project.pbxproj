@@ -23,7 +23,6 @@
 		A0AF70881E843AC2003CEB87 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70871E843AC2003CEB87 /* libsqlite3.tbd */; };
 		A0AF708A1E843AC9003CEB87 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70891E843AC9003CEB87 /* libz.tbd */; };
 		A0AF708C1E843AD2003CEB87 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF708B1E843AD2003CEB87 /* SystemConfiguration.framework */; };
-		A0AF708E1E843ADE003CEB87 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF708D1E843ADE003CEB87 /* StoreKit.framework */; };
 		A0AF70901E843AE5003CEB87 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF708F1E843AE5003CEB87 /* Security.framework */; };
 		A0AF70921E843AEF003CEB87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70911E843AEF003CEB87 /* QuartzCore.framework */; };
 		A0AF70941E843AF6003CEB87 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70931E843AF6003CEB87 /* CoreLocation.framework */; };
@@ -104,7 +103,6 @@
 				A0AF70941E843AF6003CEB87 /* CoreLocation.framework in Frameworks */,
 				A0AF70921E843AEF003CEB87 /* QuartzCore.framework in Frameworks */,
 				A0AF70901E843AE5003CEB87 /* Security.framework in Frameworks */,
-				A0AF708E1E843ADE003CEB87 /* StoreKit.framework in Frameworks */,
 				A0AF708C1E843AD2003CEB87 /* SystemConfiguration.framework in Frameworks */,
 				A0AF70A11E8456C3003CEB87 /* Bolts.framework in Frameworks */,
 				A0AF708A1E843AC9003CEB87 /* libz.tbd in Frameworks */,
@@ -311,6 +309,7 @@
 				TargetAttributes = {
 					A0AF70391E842A09003CEB87 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7AUDYPTS83;
 						ProvisioningStyle = Automatic;
 					};
 					A0AF70501E842A09003CEB87 = {
@@ -540,11 +539,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7AUDYPTS83;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MoneyManagement/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,6 +555,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.nwmissouri.MoneyManagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -560,11 +563,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7AUDYPTS83;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MoneyManagement/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -573,6 +579,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.nwmissouri.MoneyManagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

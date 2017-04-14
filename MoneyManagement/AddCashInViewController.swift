@@ -17,6 +17,7 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     @IBOutlet weak var incomeView: UIView!
     @IBOutlet weak var BorrowedView: UIView!
     @IBOutlet weak var incomeDate: UITextField!
+    
     @IBOutlet weak var borrowedDate: UITextField!
     @IBOutlet weak var from: UITextField!
     @IBOutlet weak var repayDate: UITextField!
@@ -111,6 +112,7 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
 
             
             transaction["date"] =  formatter.date(from: incomeDate.text! )
+             print("date",transaction["date"])
             transaction["isfuture"] = isFuture.isOn
             transaction["isrecurring"] = recurringSwitch.isOn
             if transaction["isrecurring"] as! Bool {
@@ -120,10 +122,17 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         else if transaction["cashInType"] as! String == "borrowed"  {
             transaction["borrowedFrom"] = from.text
             transaction["borrowedDate"] = formatter.date(from: borrowedDate.text!);
+            
+            print("borrowedDate",transaction["borrowedDate"])
+            
             transaction["borrowedRepayDate"] = formatter.date(from: repayDate.text!);
+            print("borrowedRepayDate",transaction["borrowedRepayDate"])
+            
         }
         
         transaction["addnotes"] = addNotes.text ?? ""
+        
+        transaction["userid"] = PFUser.current()?.objectId
         print("trasaction", transaction);
         transaction.saveInBackground(block: { (success, error) -> Void in
             if( error == nil) {

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -286,40 +285,26 @@
                                 <color key="textColor" red="0.99268843915178162" green="0.99075406435088498" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7eE-fO-5kL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7eE-fO-5kL">
                                 <rect key="frame" x="0.0" y="199.5" width="375" height="418.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="81" id="5ox-ps-LrN" customClass="CashInTableViewCell" customModule="MoneyManagement" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="81"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="98" id="5ox-ps-LrN" customClass="CashInTableViewCell" customModule="MoneyManagement" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ox-ps-LrN" id="S7b-Hh-Bma">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdl-Gw-Ike">
-                                                    <rect key="frame" x="28" y="42" width="60" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="DCL-iB-wLg"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CashInType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXJ-Xf-daH">
-                                                    <rect key="frame" x="150" y="42" width="89" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0P-mL-se7">
                                                     <rect key="frame" x="28" y="8" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYe-zU-J4D">
-                                                    <rect key="frame" x="281" y="41" width="60" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="transDesc" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgn-w3-Y0M">
+                                                    <rect key="frame" x="28" y="22" width="313" height="67"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -327,21 +312,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="l0P-mL-se7" firstAttribute="top" secondItem="S7b-Hh-Bma" secondAttribute="topMargin" id="7GT-Mj-vKe"/>
-                                                <constraint firstItem="l0P-mL-se7" firstAttribute="leading" secondItem="sdl-Gw-Ike" secondAttribute="leading" id="9h9-0T-FqN"/>
-                                                <constraint firstItem="sdl-Gw-Ike" firstAttribute="centerY" secondItem="mXJ-Xf-daH" secondAttribute="centerY" id="DUZ-rL-nu2"/>
-                                                <constraint firstItem="tYe-zU-J4D" firstAttribute="leading" secondItem="mXJ-Xf-daH" secondAttribute="trailing" constant="42" id="I1e-6l-SYw"/>
-                                                <constraint firstItem="sdl-Gw-Ike" firstAttribute="top" secondItem="l0P-mL-se7" secondAttribute="bottom" constant="13" id="N2X-Dq-Hj6"/>
-                                                <constraint firstItem="sdl-Gw-Ike" firstAttribute="firstBaseline" secondItem="mXJ-Xf-daH" secondAttribute="firstBaseline" id="VFs-ZG-C9p"/>
                                                 <constraint firstItem="l0P-mL-se7" firstAttribute="leading" secondItem="S7b-Hh-Bma" secondAttribute="leadingMargin" constant="20" id="XqE-WG-RRM"/>
-                                                <constraint firstItem="mXJ-Xf-daH" firstAttribute="leading" secondItem="sdl-Gw-Ike" secondAttribute="trailing" constant="62" id="bvA-Di-FWe"/>
-                                                <constraint firstItem="tYe-zU-J4D" firstAttribute="top" secondItem="S7b-Hh-Bma" secondAttribute="topMargin" constant="33" id="dG3-cv-Wtr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="amount" destination="tYe-zU-J4D" id="qq7-sH-y5u"/>
-                                            <outlet property="cashinType" destination="mXJ-Xf-daH" id="Zo8-Ag-hA8"/>
                                             <outlet property="date" destination="l0P-mL-se7" id="vNR-vr-2ni"/>
-                                            <outlet property="name" destination="sdl-Gw-Ike" id="WPV-jM-uDQ"/>
+                                            <outlet property="transDesc" destination="Fgn-w3-Y0M" id="iNH-F9-ph4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -517,7 +493,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Future" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEa-l4-Fpn">
                                         <rect key="frame" x="77" y="120" width="70" height="22"/>
@@ -591,7 +567,7 @@
                         <outlet property="RecurringEvery" destination="Ae9-6H-WP4" id="oht-Ec-mc3"/>
                         <outlet property="addNotes" destination="618-LU-cYC" id="zB9-hp-lII"/>
                         <outlet property="amount" destination="zCr-6Z-Adu" id="uly-w5-dMl"/>
-                        <outlet property="borrowedDate" destination="d8C-VG-xJc" id="OBF-zg-Wn3"/>
+                        <outlet property="borrowedDate" destination="d8C-VG-xJc" id="3YJ-CA-WPh"/>
                         <outlet property="cashInType" destination="s2u-6M-PHS" id="y6b-LX-AAd"/>
                         <outlet property="from" destination="UdV-8F-3kp" id="mNM-o5-DMx"/>
                         <outlet property="incomeDate" destination="V6v-g3-ijJ" id="Vnw-Gx-f23"/>
@@ -643,7 +619,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q45-ik-BjR" id="2Eg-lg-Zs4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUd-Lr-c2U">
@@ -738,6 +714,9 @@
                                     <segment title="Expense"/>
                                     <segment title="Lent"/>
                                 </segments>
+                                <connections>
+                                    <action selector="cashOutTypeClicked:" destination="ajs-dc-lgc" eventType="valueChanged" id="Gjq-fi-Jl4"/>
+                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZI-or-HLj">
                                 <rect key="frame" x="26" y="205" width="278" height="120"/>
@@ -777,6 +756,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="spentDateClicked:" destination="ajs-dc-lgc" eventType="editingDidBegin" id="1eG-54-teI"/>
+                                        </connections>
                                     </textField>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JEx-0J-oIK">
                                         <rect key="frame" x="12" y="89" width="51" height="31"/>
@@ -796,8 +778,56 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="breif description to this transaction" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qaX-Ck-kWX">
+                                <rect key="frame" x="117" y="445" width="230" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptY-gR-zzJ">
+                                <rect key="frame" x="45" y="416" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-wb-vRK">
+                                <rect key="frame" x="141" y="545" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addCashOut:" destination="ajs-dc-lgc" eventType="touchUpInside" id="nxS-yo-5NI"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PFk-0M-jUP">
+                                <rect key="frame" x="0.0" y="419" width="375" height="202"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8i-M8-yJG">
+                                        <rect key="frame" x="321" y="-7" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.46080139316897695" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.97095518962403549" green="1" blue="0.96489997418141016" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneLentBackDateCLicked:" destination="ajs-dc-lgc" eventType="touchUpInside" id="FB3-vo-5od"/>
+                                        </connections>
+                                    </button>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="G5q-XS-l7r">
+                                        <rect key="frame" x="29" y="27" width="317" height="149"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.97662893182798804" blue="0.97425879382532843" alpha="1" colorSpace="calibratedRGB"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="513821116.69359499">
+                                            <!--2017-04-14 00:05:16 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.98937104318686753" blue="0.98324619174092154" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClY-Vy-OJF">
-                                <rect key="frame" x="26" y="333" width="302" height="181"/>
+                                <rect key="frame" x="26" y="202" width="302" height="181"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcR-S8-QiP">
@@ -820,6 +850,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="lentbackDateClicked:" destination="ajs-dc-lgc" eventType="editingDidBegin" id="vRx-2y-qkz"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="@name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qkR-fz-RxM">
                                         <rect key="frame" x="91" y="18" width="121" height="30"/>
@@ -841,32 +874,37 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="lentDateClicked:" destination="ajs-dc-lgc" eventType="editingDidBegin" id="Ezb-GD-aWc"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qaX-Ck-kWX">
-                                <rect key="frame" x="117" y="545" width="230" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptY-gR-zzJ">
-                                <rect key="frame" x="45" y="516" width="126" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="addNotes" destination="qaX-Ck-kWX" id="Tpi-v3-WPG"/>
+                        <outlet property="amount" destination="n0z-GW-AVw" id="QpJ-q1-Uw5"/>
+                        <outlet property="cashOutType" destination="vkS-S8-v9g" id="U9f-m8-UKE"/>
+                        <outlet property="doneLentBackDate" destination="Z8i-M8-yJG" id="cRq-5V-clK"/>
+                        <outlet property="expenseView" destination="uZI-or-HLj" id="L2G-F1-O0C"/>
+                        <outlet property="isFuture" destination="JEx-0J-oIK" id="iJy-jU-cAH"/>
+                        <outlet property="isRecurring" destination="0PO-6E-vrF" id="L6Q-R0-WfA"/>
+                        <outlet property="lentBackDate" destination="DcR-E6-vVg" id="KqL-3U-U0q"/>
+                        <outlet property="lentBackDateView" destination="PFk-0M-jUP" id="M6H-nd-UaZ"/>
+                        <outlet property="lentDate" destination="UMW-FV-IUQ" id="liR-Ea-UhC"/>
+                        <outlet property="lentTo" destination="qkR-fz-RxM" id="LIP-Pq-d2q"/>
+                        <outlet property="lentView" destination="ClY-Vy-OJF" id="k3V-cz-ScR"/>
+                        <outlet property="lentbackDatePicker" destination="G5q-XS-l7r" id="yj4-0V-Ax9"/>
+                        <outlet property="purpose" destination="dzp-zC-zrs" id="l7M-CT-Ybr"/>
+                        <outlet property="spentDate" destination="XzE-Et-kjq" id="Se6-fL-ssI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEc-ly-mM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4257" y="1146"/>
+            <point key="canvasLocation" x="4256.8000000000002" y="1145.577211394303"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="3k3-e9-r4s">

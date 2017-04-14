@@ -94,31 +94,34 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         
             if cashInSelected == "income" {
                 print("income")
-                cell.amount.text = String((transactions[indexPath.row])["amount1"] as! Double )
-                cell.name.text = (transactions[indexPath.row])["source"] as! String
-                cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+                let amout = String((transactions[indexPath.row])["amount1"] as! Double )
+                let source = (transactions[indexPath.row])["source"] as! String
+                //cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
                 cell.date.text = formatter.string(from: (transactions[indexPath.row])["date"] as! Date )
+                cell.transDesc.text = "received \(amout)$ from \(source)"
+                //cell.transDesc.textColor = UIColor(red: 7, green: 56, blue: 0, alpha: 1.00)
                 //cell.date.text = String(describing: (transactions[indexPath.row])["date"] as! Date)
             }
             else if cashInSelected == "borrowed" {
                 print("borrowed")
-                cell.amount.text = String((transactions[indexPath.row])["amount1"] as! Double )
-                cell.name.text = (transactions[indexPath.row])["borrowedFrom"] as! String
-                cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
-                cell.date.text = formatter.string(from: (transactions[indexPath.row])["borrowedRepayDate"] as! Date )
+                let amount = String((transactions[indexPath.row])["amount1"] as! Double )
+                let borrowedFrom = (transactions[indexPath.row])["borrowedFrom"] as! String
+                //cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+                cell.date.text = "Repay date: " + formatter.string(from: (transactions[indexPath.row])["borrowedRepayDate"] as! Date )
+                cell.transDesc.text = "borrowed \(amount)$ from \(borrowedFrom)"
+                //cell.transDesc.textColor = UIColor(red: 7, green: 56, blue: 0, alpha: 1.00)
             }
             else if cashInSelected == "futureincome" {
                 print("future income")
-                cell.amount.text = String((transactions[indexPath.row])["amount1"] as! Double )
-                cell.name.text = (transactions[indexPath.row])["source"] as! String
-                cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+                let amount = String((transactions[indexPath.row])["amount1"] as! Double )
+                let source = (transactions[indexPath.row])["source"] as! String
+                //cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
                 cell.date.text = formatter.string(from: (transactions[indexPath.row])["date"] as! Date )
+                cell.transDesc.text = "Need to receive \(amount)$ from \(source)"
             }
         }
         else {
-            cell.amount.text = "3000"
-            cell.name.text = "Dummy"
-            cell.cashinType.text = "income"
+            
         }
         
         return cell
@@ -128,7 +131,7 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
     func retrieveTransactions(of:String) {
         print("triggered all transactions")
         let query = PFQuery(className: "Transaction")
-        
+        query.whereKey("userid", equalTo: PFUser.current()?.objectId)
         if cashInSelected == "futureincome" {
             query.whereKey("cashInType", equalTo: "income" )
             query.whereKey("isfuture", equalTo: true )
