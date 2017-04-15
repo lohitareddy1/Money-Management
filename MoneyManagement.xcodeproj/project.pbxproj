@@ -59,7 +59,7 @@
 
 /* Begin PBXFileReference section */
 		6F47F6B11EA1968A006C0B10 /* CashoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashoutTableViewCell.swift; sourceTree = "<group>"; };
-		6F47F6B31EA1AD37006C0B10 /* EasyAdditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyAdditionViewController.swift; sourceTree = "<group>"; };
+		6F47F6B31EA1AD37006C0B10 /* EasyAdditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EasyAdditionViewController.swift; path = ../EasyAdditionViewController.swift; sourceTree = "<group>"; };
 		6FD2E4991E902A05001AB290 /* CashInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashInTableViewCell.swift; sourceTree = "<group>"; };
 		A02AE4291E91EBC200E9AA7B /* userProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userProfileViewController.swift; sourceTree = "<group>"; };
 		A048C0B61E8C837B00F41AD9 /* TransactionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 		A0534C2D1E9034A90026DB6F /* user */ = {
 			isa = PBXGroup;
 			children = (
+				6F47F6B31EA1AD37006C0B10 /* EasyAdditionViewController.swift */,
 				A02AE4291E91EBC200E9AA7B /* userProfileViewController.swift */,
 				A0AF70EE1E84666B003CEB87 /* UserHomeViewController.swift */,
 				A0AF703F1E842A09003CEB87 /* LoginViewController.swift */,
@@ -177,7 +178,6 @@
 		A0AF70311E842A09003CEB87 = {
 			isa = PBXGroup;
 			children = (
-				6F47F6B31EA1AD37006C0B10 /* EasyAdditionViewController.swift */,
 				A0AF706E1E84392A003CEB87 /* Frameworks */,
 				A0AF703C1E842A09003CEB87 /* MoneyManagement */,
 				A0AF70541E842A09003CEB87 /* MoneyManagementTests */,

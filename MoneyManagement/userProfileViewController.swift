@@ -9,8 +9,12 @@
 import UIKit
 import Parse
 
-class userProfileViewController: UIViewController {
+class userProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var userDetailsView: UIView!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var logout: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +37,52 @@ class userProfileViewController: UIViewController {
     }
     
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
     
- 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imageView.image = selectedPhoto
+        
+        
+        let imageData = UIImagePNGRepresentation(self.imageView.image!)
+        
+        //create a parse file to store in cloud
+        let prfname = "\((PFUser.current()?.username)!)_Profile.png"
+        
+        let parseImageFile = PFFile(name: prfname, data: imageData!)
+        
+        PFUser.current()?.setObject(parseImageFile, forKey: "Avatar")
+        
+        PFUser.current()?.saveInBackground(block: { (succ, err) in
+            if succ {
+                print("profile pic saved")
+            }
+            else {
+                print("profile pic not saved", err)
+            }
+        })
+        
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        username.text = PFUser.current()?.username
+        userEmail.text = PFUser.current()?.email
+        // imageView.image = (PFUser.current())?["Avatar"] as! PFFile
+    }
+    
+    @IBAction func selectImageFromLibrary(_ sender: UITapGestureRecognizer) {
+        print("Tapped on profile picture")
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
