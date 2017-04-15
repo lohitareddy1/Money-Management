@@ -31,6 +31,9 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
    
     @IBOutlet weak var recurringLabel: UILabel!
     
+    var reference:Bool=false
+    
+    
     var cashInTypes:[String] = ["income", "borrowed"]
     var RecureingTimes = ["Weekly", "Monthly", "Quaterly", "Yearly"]
     override func viewDidLoad() {
@@ -42,6 +45,8 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         self.navigationItem.titleView?.sizeToFit()
         // Do any additional setup after loading the view.
     }
+    
+    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return RecureingTimes[row]

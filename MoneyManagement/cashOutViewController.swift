@@ -8,7 +8,8 @@
 
 import UIKit
 
-class cashOutViewController: UIViewController {
+class cashOutViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    var arr:[String]=["NotMe","Telidhu","Chepanu"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +21,30 @@ class cashOutViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if arr.count != nil{
+            return arr.count}
+        else {
+            return 0
+        }
+        
+    }
     
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! CashoutTableViewCell
+        cell.from.text=arr[indexPath.row]
+        //cell.repay.text=arr[indexPath.row+1]
+        //cell.borrowed.text=arr[indexPath.row+2]
+       return cell
+    }
+    
     /*
     // MARK: - Navigation
 

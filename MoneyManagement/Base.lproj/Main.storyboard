@@ -28,7 +28,7 @@
                                 <color key="textColor" red="0.99791051378081697" green="0.98896224017224721" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.94810994975077101" green="0.97614664925409544" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="----- a app for everyone  -----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-IU-1Iw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="----- an app for everyone  -----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-IU-1Iw">
                                 <rect key="frame" x="21" y="65" width="332" height="21"/>
                                 <fontDescription key="fontDescription" name="BodoniOrnamentsITCTT" family="Bodoni Ornaments" pointSize="10"/>
                                 <color key="textColor" red="1" green="0.99093529283782111" blue="0.96385461848050169" alpha="1" colorSpace="calibratedRGB"/>
@@ -610,34 +610,33 @@
                                 <color key="textColor" red="0.99268843920000005" green="0.99075406440000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="twi-tZ-GcH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="twi-tZ-GcH">
                                 <rect key="frame" x="0.0" y="240" width="375" height="378"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Q45-ik-BjR" customClass="CashInTableViewCell" customModule="MoneyManagement" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="96" id="Q45-ik-BjR" customClass="CashoutTableViewCell" customModule="MoneyManagement" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q45-ik-BjR" id="2Eg-lg-Zs4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUd-Lr-c2U">
-                                                    <rect key="frame" x="311" y="11" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repay Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUd-Lr-c2U">
+                                                    <rect key="frame" x="279" y="20" width="88" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaM-vl-mgc">
-                                                    <rect key="frame" x="156" y="11" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaM-vl-mgc">
+                                                    <rect key="frame" x="22" y="20" width="71" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2h-H2-0Fb">
-                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Borrowed Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2h-H2-0Fb">
+                                                    <rect key="frame" x="118" y="20" width="114" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -646,12 +645,15 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="amount" destination="OUd-Lr-c2U" id="yVa-dx-I16"/>
-                                            <outlet property="cashinType" destination="zaM-vl-mgc" id="gME-g6-1hj"/>
-                                            <outlet property="name" destination="V2h-H2-0Fb" id="oTV-qL-8CD"/>
+                                            <outlet property="from" destination="zaM-vl-mgc" id="EAd-B3-EAG"/>
+                                            <outlet property="repay" destination="OUd-Lr-c2U" id="Mnt-Rd-leD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FWx-k4-LKe" id="nf2-RU-Htl"/>
+                                    <outlet property="delegate" destination="FWx-k4-LKe" id="vPp-fM-jzX"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvb-tk-ojZ">
                                 <rect key="frame" x="92" y="88" width="30" height="30"/>
@@ -674,12 +676,21 @@
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.36078431372549019" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="twi-tZ-GcH" secondAttribute="trailing" id="JS0-fv-wmh"/>
+                            <constraint firstItem="acP-WH-viY" firstAttribute="top" secondItem="twi-tZ-GcH" secondAttribute="bottom" id="V0D-CW-wmi"/>
+                            <constraint firstItem="twi-tZ-GcH" firstAttribute="top" secondItem="Npo-5H-JP5" secondAttribute="bottom" constant="176" id="mkV-j3-zz7"/>
+                            <constraint firstItem="twi-tZ-GcH" firstAttribute="leading" secondItem="liY-36-71E" secondAttribute="leading" id="nHg-aS-oLj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z5M-7K-0IC"/>
+                    <connections>
+                        <outlet property="tableView" destination="twi-tZ-GcH" id="e8L-Es-Sno"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxC-hr-tT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3348" y="642"/>
+            <point key="canvasLocation" x="3348" y="641.82908545727139"/>
         </scene>
         <!--Add Cash Out View Controller-->
         <scene sceneID="Gaw-fP-2uW">
@@ -1187,10 +1198,10 @@
             </objects>
             <point key="canvasLocation" x="4439" y="-1746"/>
         </scene>
-        <!--View Controller-->
+        <!--Easy Addition View Controller-->
         <scene sceneID="cr9-PR-ZiJ">
             <objects>
-                <viewController id="56S-vq-UKh" sceneMemberID="viewController">
+                <viewController id="56S-vq-UKh" customClass="EasyAdditionViewController" customModule="MoneyManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zjn-NC-SZg"/>
                         <viewControllerLayoutGuide type="bottom" id="ho0-Tc-FYa"/>
@@ -1214,7 +1225,7 @@
                                     <color key="titleColor" red="1" green="0.97821652260825465" blue="0.99738148845940677" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="n37-JP-ZDd" kind="show" id="1cy-ty-N1c"/>
+                                    <segue destination="n37-JP-ZDd" kind="show" identifier="income" id="1cy-ty-N1c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWI-4k-Q00">
@@ -1225,7 +1236,7 @@
                                     <color key="titleColor" red="1" green="0.97821652260000003" blue="0.99738148849999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ajs-dc-lgc" kind="show" id="Pxf-hh-N5H"/>
+                                    <segue destination="ajs-dc-lgc" kind="show" identifier="expense" id="Pxf-hh-N5H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ak0-3E-tcc">
@@ -1236,7 +1247,7 @@
                                     <color key="titleColor" red="1" green="0.97821652260000003" blue="0.99738148849999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ajs-dc-lgc" kind="show" id="Ghh-05-v3g"/>
+                                    <segue destination="ajs-dc-lgc" kind="show" identifier="payment" id="Ghh-05-v3g"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFO-Yr-qwq">
@@ -1247,7 +1258,7 @@
                                     <color key="titleColor" red="1" green="0.97821652260000003" blue="0.99738148849999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="n37-JP-ZDd" kind="show" id="cDT-or-gqw"/>
+                                    <segue destination="n37-JP-ZDd" kind="show" identifier="receiveMoney" id="cDT-or-gqw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1449,7 +1460,7 @@
         <image name="User-30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="49Y-Pb-lWV"/>
-        <segue reference="d6h-MP-asx"/>
+        <segue reference="Pxf-hh-N5H"/>
+        <segue reference="cDT-or-gqw"/>
     </inferredMetricsTieBreakers>
 </document>
