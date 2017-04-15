@@ -21,6 +21,10 @@ class cashOutViewController: UIViewController,UITableViewDelegate,UITableViewDat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        retrieveTransactions(of:"")
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if arr.count != nil{
             return arr.count}
@@ -45,6 +49,49 @@ class cashOutViewController: UIViewController,UITableViewDelegate,UITableViewDat
        return cell
     }
     
+    
+//    
+//    func retrieveTransactions(of:String) {
+//        print("triggered all transactions")
+//        let query = PFQuery(className: "Transaction")
+//        query.whereKey("userid", equalTo: PFUser.current()?.objectId)
+//        if cashInSelected == "futureincome" {
+//            query.whereKey("cashInType", equalTo: "income" )
+//            query.whereKey("isfuture", equalTo: true )
+//            query.addAscendingOrder("date")
+//            print("futureincome")
+//        }
+//        else if cashInSelected == "borrowed" {
+//            query.whereKey("cashInType", equalTo: of )
+//            query.addAscendingOrder("borrowedFrom")
+//            print(of)
+//        }
+//        else if cashInSelected == "income" {
+//            query.whereKey("cashInType", equalTo: of )
+//            query.addDescendingOrder("date")
+//            print(of)
+//        }
+//        
+//        query.findObjectsInBackground { ( transactions:[PFObject]?, err: Error?) in
+//            if err == nil {
+//                print("Transactions", transactions ?? "transaction")
+//                self.transactions = transactions as! [Transaction]
+//                self.transactionTable.reloadData()
+//                for transaction in self.transactions {
+//                    // let trans = transaction as! Transaction
+//                    
+//                    
+//                    print("1 ", transaction["cashInType"] as! String)
+//                    
+//                    // self.transactionsDisp.text += (trans["name"])
+//                }
+//            }
+//            else {
+//                print("Error", err)
+//            }
+//        }
+//    }
+
     /*
     // MARK: - Navigation
 

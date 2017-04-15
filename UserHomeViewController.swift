@@ -11,6 +11,7 @@ import Parse
 class UserHomeViewController: UIViewController {
 
     @IBOutlet weak var loggedUser: UILabel!
+    @IBOutlet weak var AvatarView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +20,14 @@ class UserHomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loggedUser.text = "Hi " + (PFUser.current()?.username!)!
+        if var AvatarFile = (PFUser.current())?["Avatar"] as! PFFile?{
+            
+            AvatarFile.getDataInBackground { (AvatarImage, err) in
+                if (err == nil) {
+                    self.AvatarView.image = UIImage(data: AvatarImage!)
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -106,6 +106,7 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     @IBAction func addCashIn(_ sender: Any) {
         let transaction = PFObject(className: "Transaction")
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/YYYY"
         

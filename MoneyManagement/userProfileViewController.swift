@@ -72,7 +72,14 @@ class userProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewWillAppear(_ animated: Bool) {
         username.text = PFUser.current()?.username
         userEmail.text = PFUser.current()?.email
-        // imageView.image = (PFUser.current())?["Avatar"] as! PFFile
+        if var AvatarFile = (PFUser.current())?["Avatar"] as! PFFile?{
+            
+        AvatarFile.getDataInBackground { (AvatarImage, err) in
+            if (err == nil) {
+                self.imageView.image = UIImage(data: AvatarImage!)
+            }
+        }
+        }
     }
     
     @IBAction func selectImageFromLibrary(_ sender: UITapGestureRecognizer) {

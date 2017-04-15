@@ -293,7 +293,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ox-ps-LrN" id="S7b-Hh-Bma">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0P-mL-se7">
@@ -328,7 +328,7 @@
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lYW-GO-Rma">
                                 <rect key="frame" x="25" y="149" width="326" height="29"/>
-                                <color key="backgroundColor" red="0.87746501996723658" green="0.96435536605381977" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.066666666666666666" green="0.36078431372549019" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="ZKP-zf-Hbo"/>
                                     <constraint firstAttribute="width" constant="326" id="ryq-lY-uuP"/>
@@ -338,6 +338,7 @@
                                     <segment title="Future Incomes"/>
                                     <segment title="Borrowed"/>
                                 </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="doChangesByCurrentSegment:" destination="gLe-R0-KR5" eventType="valueChanged" id="YpE-Qk-Zc9"/>
                                 </connections>
@@ -618,7 +619,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q45-ik-BjR" id="2Eg-lg-Zs4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repay Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUd-Lr-c2U">
@@ -665,19 +666,29 @@
                                     <segue destination="ajs-dc-lgc" kind="show" id="49Y-Pb-lWV"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-du-8EI">
-                                <rect key="frame" x="94" y="182" width="187" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.89600120837467812" green="0.96063225112411244" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LDH-Lm-mdU">
+                                <rect key="frame" x="17" y="172" width="335" height="29"/>
+                                <color key="backgroundColor" red="0.066666666666666666" green="0.36470588235294116" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="Uep-7V-2mc"/>
+                                    <constraint firstAttribute="height" constant="28" id="be0-HF-3yQ"/>
+                                </constraints>
                                 <segments>
-                                    <segment title="Expense/lent"/>
-                                    <segment title="Payments"/>
+                                    <segment title="Expenses"/>
+                                    <segment title="Lent"/>
+                                    <segment title="Future Payments"/>
                                 </segments>
+                                <color key="tintColor" red="0.9953566602893007" green="0.99955806293521665" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="doChangesByCurrentSegment:" destination="gLe-R0-KR5" eventType="valueChanged" id="zrL-Oq-013"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.36078431372549019" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="twi-tZ-GcH" secondAttribute="trailing" id="JS0-fv-wmh"/>
+                            <constraint firstItem="LDH-Lm-mdU" firstAttribute="top" secondItem="Npo-5H-JP5" secondAttribute="bottom" constant="108" id="PeO-ig-eTo"/>
+                            <constraint firstItem="LDH-Lm-mdU" firstAttribute="centerX" secondItem="liY-36-71E" secondAttribute="centerX" constant="-3" id="R97-zH-Vom"/>
                             <constraint firstItem="acP-WH-viY" firstAttribute="top" secondItem="twi-tZ-GcH" secondAttribute="bottom" id="V0D-CW-wmi"/>
                             <constraint firstItem="twi-tZ-GcH" firstAttribute="top" secondItem="Npo-5H-JP5" secondAttribute="bottom" constant="176" id="mkV-j3-zz7"/>
                             <constraint firstItem="twi-tZ-GcH" firstAttribute="leading" secondItem="liY-36-71E" secondAttribute="leading" id="nHg-aS-oLj"/>
@@ -1375,6 +1386,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Home-30" selectedImage="Home-30" id="AjO-NS-L8Q"/>
                     <connections>
+                        <outlet property="AvatarView" destination="H2x-5L-K92" id="HjE-rO-5uB"/>
                         <outlet property="loggedUser" destination="in1-m6-dbD" id="mbo-oZ-nhK"/>
                     </connections>
                 </viewController>
@@ -1489,7 +1501,7 @@
         <image name="User-50" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pxf-hh-N5H"/>
-        <segue reference="cDT-or-gqw"/>
+        <segue reference="49Y-Pb-lWV"/>
+        <segue reference="d6h-MP-asx"/>
     </inferredMetricsTieBreakers>
 </document>
