@@ -77,7 +77,7 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         if obj.cashInType == "borrowed" || (obj["isfuture"] as! Bool) == true  {
             let settleUp = UITableViewRowAction(style: .normal, title: "Settle Up") { action, index in
                 print("settleUp button tapped")
-                
+                self.settleUp(at: (obj.objectId)!)
             }
             settleUp.backgroundColor = .orange
             buttons.append(settleUp)
@@ -100,7 +100,37 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         return buttons 
     }
     func settleUp(at:String){
-        
+        let query = PFQuery(className: "Transaction")
+        query.whereKey("objectId", equalTo: at )
+        query.findObjectsInBackground(block: { (transactions:[PFObject]?, err) in
+            if err == nil {
+                for transaction in transactions! {
+                    transaction["settled"] = true
+                    if (transaction["isfuture"] != nil && (transaction["isfuture"] as! Bool) == true){
+                        transaction["isfuture"] = false
+                    }
+                    if (transaction["cashInType"] != nil ){
+                        
+                        if((transaction["cashInType"] as! String) == "borrowed"){
+                            transaction["cashOutType"] = "expense"
+                            transaction["purpose"] = transaction["borrowedFrom"]
+                        }
+                        
+                        
+                    }
+                    transaction.saveInBackground(block: { (succ, err) in
+                        if succ {
+                            self.performActionsByCurrentSegment()
+                        }
+                        else{
+                            print("settleup", err)
+                        }
+                    })
+                }
+                //NSNotificationCenter.defaultCenter().postNotificationName("Transaction Deleted", object: nil)
+                
+            }
+        })
     }
     func deleteRecord(at:String){
         let query = PFQuery(className: "Transaction")
@@ -135,8 +165,10 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
             if cashInSelected == "income" {
                 print("income")
                 let amout = String((transactions[indexPath.row])["amount1"] as! Double )
-                let source = (transactions[indexPath.row])["source"] as! String
-                
+                var source:String = "UnKnown"
+                if(transactions[indexPath.row]["source"] != nil){
+                    source = (transactions[indexPath.row])["source"] as! String
+                }
                 cell.date.text = formatter.string(from: (transactions[indexPath.row])["date"] as! Date )
                 cell.transDesc.text = "received \(amout)$ from \(source)"
                 
