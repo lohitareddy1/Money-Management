@@ -66,7 +66,7 @@ class UserHomeViewController: UIViewController {
                 self.tmoneyLeft.text = "\(tmoney)$"
                 self.tbalance = tmoney
                 self.available = (self.tbalance + self.youowed) - self.youowe
-                self.availableBalance.text = String(self.available)
+                self.availableBalance.text = "\(self.available)$"
             }
             else {
                 print("Error", err)
@@ -88,7 +88,7 @@ class UserHomeViewController: UIViewController {
                 self.yOwe.text = "\(yowe)$"
                 self.youowe = yowe
                 self.available = (self.tbalance + self.youowed) - self.youowe
-                self.availableBalance.text = String(self.available)
+                self.availableBalance.text = "\(self.available)$"
             }
             else {
                 print("Error", err)
@@ -110,7 +110,7 @@ class UserHomeViewController: UIViewController {
                 self.yOwed.text = "\(yowed)$"
                 self.youowed = yowed
                 self.available = (self.tbalance + self.youowed) - self.youowe
-                self.availableBalance.text = String(self.available)
+                 self.availableBalance.text = "\(self.available)$"
             }
             else {
                 print("Error", err)

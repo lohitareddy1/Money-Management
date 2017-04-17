@@ -54,12 +54,22 @@ class AccountSettingsViewController: UIViewController {
         PFUser.current()?.saveInBackground(block: { (Success, err) in
             if Success{
                 print("user details updated")
+                self.displayAlertWithTitle("Success", message: "user details updated")
             }
             else{
                 print("user details not updated",err)
+                self.displayAlertWithTitle("Faliure", message: "user details not updated")
             }
         })
 
+        
+    }
+    
+    func displayAlertWithTitle(_ title:String, message:String){
+        let alert:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction:UIAlertAction =  UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
         
     }
 
