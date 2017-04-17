@@ -39,6 +39,8 @@
 		A0AF70A21E8456C3003CEB87 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AF70A01E8456C3003CEB87 /* Parse.framework */; };
 		A0AF70EF1E84666B003CEB87 /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF70EE1E84666B003CEB87 /* UserHomeViewController.swift */; };
 		A0AF70F11E846683003CEB87 /* CashInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AF70F01E846683003CEB87 /* CashInViewController.swift */; };
+		A0F29BEC1EA4312300B38655 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = A0F29BEB1EA42E5A00B38655 /* FontAwesome.otf */; };
+		A0F29BEE1EA45D7B00B38655 /* RecurringTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F29BED1EA45D7B00B38655 /* RecurringTableViewCell.swift */; };
 		A0FB250F1EA0814600BBC930 /* cashOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB250E1EA0814600BBC930 /* cashOutViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		A0AF70A01E8456C3003CEB87 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A0AF70EE1E84666B003CEB87 /* UserHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHomeViewController.swift; path = ../UserHomeViewController.swift; sourceTree = "<group>"; };
 		A0AF70F01E846683003CEB87 /* CashInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashInViewController.swift; sourceTree = "<group>"; };
+		A0F29BEB1EA42E5A00B38655 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		A0F29BED1EA45D7B00B38655 /* RecurringTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecurringTableViewCell.swift; sourceTree = "<group>"; };
 		A0FB250E1EA0814600BBC930 /* cashOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cashOutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +187,7 @@
 		A0AF70311E842A09003CEB87 = {
 			isa = PBXGroup;
 			children = (
+				A0F29BEA1EA42E4B00B38655 /* Fonts */,
 				A0AF706E1E84392A003CEB87 /* Frameworks */,
 				A0AF703C1E842A09003CEB87 /* MoneyManagement */,
 				A0AF70541E842A09003CEB87 /* MoneyManagementTests */,
@@ -210,6 +215,7 @@
 				A0534C2B1E900D710026DB6F /* Models */,
 				A0AF703D1E842A09003CEB87 /* AppDelegate.swift */,
 				A0AF70411E842A09003CEB87 /* Main.storyboard */,
+				A0F29BED1EA45D7B00B38655 /* RecurringTableViewCell.swift */,
 				6FC58BCF1EA2A92700558099 /* RecurringTransactionTableTableViewController.swift */,
 				A0AF70471E842A09003CEB87 /* Assets.xcassets */,
 				A0AF70491E842A09003CEB87 /* LaunchScreen.storyboard */,
@@ -254,6 +260,14 @@
 				A0AF70871E843AC2003CEB87 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0F29BEA1EA42E4B00B38655 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A0F29BEB1EA42E5A00B38655 /* FontAwesome.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,8 +338,7 @@
 				TargetAttributes = {
 					A0AF70391E842A09003CEB87 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7AUDYPTS83;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					A0AF70501E842A09003CEB87 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -364,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F29BEC1EA4312300B38655 /* FontAwesome.otf in Resources */,
 				A0AF704B1E842A09003CEB87 /* LaunchScreen.storyboard in Resources */,
 				A0AF70481E842A09003CEB87 /* Assets.xcassets in Resources */,
 				A0AF70431E842A09003CEB87 /* Main.storyboard in Resources */,
@@ -398,6 +412,7 @@
 				6F47F6B41EA1AD37006C0B10 /* EasyAdditionViewController.swift in Sources */,
 				A0AF70F11E846683003CEB87 /* CashInViewController.swift in Sources */,
 				A0FB250F1EA0814600BBC930 /* cashOutViewController.swift in Sources */,
+				A0F29BEE1EA45D7B00B38655 /* RecurringTableViewCell.swift in Sources */,
 				6FC58BD01EA2A92700558099 /* RecurringTransactionTableTableViewController.swift in Sources */,
 				A0AF709E1E843E11003CEB87 /* user.swift in Sources */,
 				A0AF70401E842A09003CEB87 /* LoginViewController.swift in Sources */,
@@ -560,7 +575,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7AUDYPTS83;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -584,7 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7AUDYPTS83;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

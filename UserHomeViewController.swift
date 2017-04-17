@@ -22,7 +22,7 @@ class UserHomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        loggedUser.text = "Hi " + ((PFUser.current()?.username!)!).uppercased()
+        loggedUser.text = "Hi " + ((PFUser.current()?.username!)!)
         if var AvatarFile = (PFUser.current())?["Avatar"] as! PFFile?{
             
             AvatarFile.getDataInBackground { (AvatarImage, err) in

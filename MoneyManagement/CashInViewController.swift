@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bolts
 import Parse
 
 class CashInViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -64,26 +65,60 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
      func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        var buttons: [UITableViewRowAction] = []
+        let obj = transactions[editActionsForRowAt.row]
+        
         let more = UITableViewRowAction(style: .normal, title: "More") { action, index in
             print("more button tapped")
         }
         more.backgroundColor = .blue
+        buttons.append(more)
         
-        
-        let favorite = UITableViewRowAction(style: .normal, title: "Settled") { action, index in
-            print("favorite button tapped")
+        if obj.cashInType == "borrowed" || (obj["isfuture"] as! Bool) == true  {
+            let favorite = UITableViewRowAction(style: .normal, title: "Settled") { action, index in
+                print("favorite button tapped")
+            }
+            favorite.backgroundColor = .orange
+            buttons.append(favorite)
         }
-        favorite.backgroundColor = .orange
         
-        let share = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
-            print("share button tapped")
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+            
+            
+            
+            print("delete button tapped")
+            print(obj.objectId!)
+            self.deleteRecord(at: (obj.objectId)!)
+            
         }
-        share.backgroundColor = .red
+        delete.backgroundColor = .red
+        buttons.append(delete)
         
-        return [share, favorite, more]
+        
+        return buttons 
     }
-    
-     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    func deleteRecord(at:String){
+        let query = PFQuery(className: "Transaction")
+        query.whereKey("objectId", equalTo: at )
+        query.findObjectsInBackground(block: { (transactions:[PFObject]?, err) in
+            if err == nil {
+                for transaction in transactions! {
+                    transaction.deleteInBackground(block: { (succ, err) in
+                        if succ {
+                            self.transactionTable.reloadData()
+                        }
+                        else{
+                            print("delted", err)
+                        }
+                    })
+                }
+                //NSNotificationCenter.defaultCenter().postNotificationName("Transaction Deleted", object: nil)
+                
+            }
+        })
+        
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
@@ -96,26 +131,25 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
                 print("income")
                 let amout = String((transactions[indexPath.row])["amount1"] as! Double )
                 let source = (transactions[indexPath.row])["source"] as! String
-                //cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+                
                 cell.date.text = formatter.string(from: (transactions[indexPath.row])["date"] as! Date )
                 cell.transDesc.text = "received \(amout)$ from \(source)"
-                //cell.transDesc.textColor = UIColor(red: 7, green: 56, blue: 0, alpha: 1.00)
-                //cell.date.text = String(describing: (transactions[indexPath.row])["date"] as! Date)
+                
             }
             else if cashInSelected == "borrowed" {
                 print("borrowed")
                 let amount = String((transactions[indexPath.row])["amount1"] as! Double )
                 let borrowedFrom = (transactions[indexPath.row])["borrowedFrom"] as! String
-                //cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+                
                 cell.date.text = "Repay date: " + formatter.string(from: (transactions[indexPath.row])["borrowedRepayDate"] as! Date )
                 cell.transDesc.text = "borrowed \(amount)$ from \(borrowedFrom)"
-                //cell.transDesc.textColor = UIColor(red: 7, green: 56, blue: 0, alpha: 1.00)
+                
             }
             else if cashInSelected == "futureincome" {
                 print("future income")
                 let amount = String((transactions[indexPath.row])["amount1"] as! Double )
                 let source = (transactions[indexPath.row])["source"] as! String
-                //cell.cashinType.text = (transactions[indexPath.row])["cashInType"] as! String
+                
                 cell.date.text = formatter.string(from: (transactions[indexPath.row])["date"] as! Date )
                 cell.transDesc.text = "Need to receive \(amount)$ from \(source)"
             }
@@ -145,6 +179,7 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         else if cashInSelected == "income" {
             query.whereKey("cashInType", equalTo: of )
+            query.whereKey("isfuture", notEqualTo: true)
             query.addDescendingOrder("date")
             print(of)
         }
@@ -155,12 +190,9 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
                  self.transactions = transactions as! [Transaction]
                 self.transactionTable.reloadData()
                 for transaction in self.transactions {
-                   // let trans = transaction as! Transaction
-                
                     
                    print("1 ", transaction["cashInType"] as! String)
                     
-                   // self.transactionsDisp.text += (trans["name"])
                 }
             }
             else {

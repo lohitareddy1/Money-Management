@@ -16,6 +16,7 @@ class Transaction: PFObject, PFSubclassing {
     @NSManaged var bank:String!
     @NSManaged var userID:String!
     
+    
     static func parseClassName() -> String {
         return "Transaction"
     }
