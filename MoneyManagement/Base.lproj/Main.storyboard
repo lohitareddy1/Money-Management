@@ -1467,16 +1467,6 @@
                                     <segue destination="n37-JP-ZDd" kind="show" identifier="income" id="1cy-ty-N1c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFO-Yr-qwq">
-                                <rect key="frame" x="97" y="241" width="180" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Recurring Payment?">
-                                    <color key="titleColor" red="1" green="0.97821652260000003" blue="0.99738148849999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="FWx-k4-LKe" kind="show" id="Ghq-JP-dLy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.36078431372549019" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1484,11 +1474,8 @@
                             <constraint firstItem="WWI-4k-Q00" firstAttribute="top" secondItem="zjn-NC-SZg" secondAttribute="bottom" constant="119" id="BdL-dd-KVe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gwj-5u-mgt" secondAttribute="trailing" constant="98" id="SY4-Jv-VxT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WWI-4k-Q00" secondAttribute="trailing" constant="89" id="XDW-Gw-gtK"/>
-                            <constraint firstItem="pFO-Yr-qwq" firstAttribute="top" secondItem="zjn-NC-SZg" secondAttribute="bottom" constant="177" id="Yr4-0s-HM0"/>
                             <constraint firstItem="WWI-4k-Q00" firstAttribute="leading" secondItem="gyc-d6-irK" secondAttribute="leadingMargin" constant="88" id="efl-Xq-Ao1"/>
-                            <constraint firstItem="pFO-Yr-qwq" firstAttribute="leading" secondItem="gyc-d6-irK" secondAttribute="leadingMargin" constant="81" id="gGm-7r-pED"/>
                             <constraint firstItem="gwj-5u-mgt" firstAttribute="top" secondItem="zjn-NC-SZg" secondAttribute="bottom" constant="67" id="oZy-kg-vbZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pFO-Yr-qwq" secondAttribute="trailing" constant="82" id="ywB-Qt-6hk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Please choose the type of transaction" id="OzU-Q7-yE9"/>
@@ -1712,7 +1699,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIh-ho-iV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="1146"/>
+            <point key="canvasLocation" x="1841" y="1749"/>
         </scene>
         <!--Settings-->
         <scene sceneID="zfe-Mm-bCn">
@@ -1743,8 +1730,7 @@
         <image name="User-50" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d6h-MP-asx"/>
-        <segue reference="Ghq-JP-dLy"/>
-        <segue reference="49Y-Pb-lWV"/>
+        <segue reference="1cy-ty-N1c"/>
+        <segue reference="Pxf-hh-N5H"/>
     </inferredMetricsTieBreakers>
 </document>

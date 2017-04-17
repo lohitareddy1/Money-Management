@@ -115,6 +115,7 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
                             transaction["cashOutType"] = "expense"
                             transaction["purpose"] = transaction["borrowedFrom"]
                             transaction["date"] = transaction["borrowedDate"] as! Date
+                            transaction["cashInType"] = NSNull()
                         }
                         
                         
