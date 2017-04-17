@@ -51,15 +51,15 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     }
     
     @IBAction func borrowedDateClicked(_ sender: Any) {
-        var datepicked = "borroweddate"
+         datepicked = "borroweddate"
          borrowedDate.isHidden = true
         repayDate.isHidden = false
         datePickerVIew.isHidden = false
     }
     
     @IBAction func repayDateClicked(_ sender: Any) {
-        var datepicked = "repaydate"
-        borrowedDate.isHidden = true
+         datepicked = "repaydate"
+        repayDate.isHidden = true
         incomeDate.isHidden = false
         datePickerVIew.isHidden = false
     }
@@ -130,25 +130,25 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
     }
     @IBAction func incomeDateClicked(_ sender: Any) {
-        var datepicked = "income"
+         datepicked = "income"
         incomeDate.isHidden = true
         datePickerVIew.isHidden = false
     }
     @IBAction func dateDoneClicked(_ sender: Any) {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/YYYY"
-        if datepicked = "income"{
-        incomeDate.isHidden = true
+        if datepicked == "income"{
+        incomeDate.isHidden = false
         incomeDate.text = formatter.string(from: datePicker.date)
         incomeDateVar = datePicker.date
         }
-        if datepicked = "borroweddate"{
+        if datepicked == "borroweddate"{
             borrowedDate.isHidden = false
             borrowedDate.text = formatter.string(from: datePicker.date)
             borrowedDateVar = datePicker.date
             
         }
-        if datepicked = "repaydate"{
+        if datepicked == "repaydate"{
             repayDate.isHidden = false
             repayDate.text = formatter.string(from: datePicker.date)
             repayDateVar = datePicker.date

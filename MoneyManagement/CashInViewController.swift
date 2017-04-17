@@ -75,11 +75,13 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         buttons.append(more)
         
         if obj.cashInType == "borrowed" || (obj["isfuture"] as! Bool) == true  {
-            let favorite = UITableViewRowAction(style: .normal, title: "Settled") { action, index in
-                print("favorite button tapped")
+            let settleUp = UITableViewRowAction(style: .normal, title: "Settle Up") { action, index in
+                print("settleUp button tapped")
+                
             }
-            favorite.backgroundColor = .orange
-            buttons.append(favorite)
+            settleUp.backgroundColor = .orange
+            buttons.append(settleUp)
+            
         }
         
         let delete = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
@@ -97,6 +99,9 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         return buttons 
     }
+    func settleUp(at:String){
+        
+    }
     func deleteRecord(at:String){
         let query = PFQuery(className: "Transaction")
         query.whereKey("objectId", equalTo: at )
@@ -105,7 +110,7 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
                 for transaction in transactions! {
                     transaction.deleteInBackground(block: { (succ, err) in
                         if succ {
-                            self.transactionTable.reloadData()
+                            self.performActionsByCurrentSegment()
                         }
                         else{
                             print("delted", err)
