@@ -1172,7 +1172,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWC-6Z-Wt3">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWC-6Z-Wt3">
                                 <rect key="frame" x="68" y="171" width="238" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1192,7 +1192,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuf-we-rFf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tuf-we-rFf">
                                 <rect key="frame" x="68" y="253" width="238" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1211,7 +1211,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEa-LO-cTI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEa-LO-cTI">
                                 <rect key="frame" x="68" y="335" width="238" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1221,31 +1221,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzm-Ua-igj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzm-Ua-igj">
                                 <rect key="frame" x="68" y="373" width="107" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="107" id="8mO-gE-gz2"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VdL-qu-p4T">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VdL-qu-p4T">
                                 <rect key="frame" x="68" y="417" width="238" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="wVJ-dl-8e0"/>
+                                    <constraint firstAttribute="height" constant="30" id="4Jb-eB-z80"/>
+                                    <constraint firstAttribute="width" constant="238" id="rci-Tf-Ft3"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-pZ-Zup">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX1-pZ-Zup">
                                 <rect key="frame" x="121" y="466" width="132" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="132" id="FJe-Hb-0ll"/>
-                                    <constraint firstAttribute="height" constant="28" id="lYf-XR-dg2"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Save changes">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1257,14 +1251,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.36470588235294116" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="qzm-Ua-igj" firstAttribute="top" secondItem="eEa-LO-cTI" secondAttribute="bottom" constant="8" symbolic="YES" id="3Xa-Qj-TRT"/>
+                            <constraint firstItem="VdL-qu-p4T" firstAttribute="leading" secondItem="qzm-Ua-igj" secondAttribute="leading" id="1qD-kZ-JlX"/>
                             <constraint firstItem="eEa-LO-cTI" firstAttribute="top" secondItem="vVU-hj-UZz" secondAttribute="bottom" constant="8" symbolic="YES" id="5B9-ZM-Ljk"/>
-                            <constraint firstItem="4T5-5B-yEF" firstAttribute="top" secondItem="RX1-pZ-Zup" secondAttribute="bottom" constant="129" id="5IV-md-IVZ"/>
                             <constraint firstItem="6yw-XP-eET" firstAttribute="trailing" secondItem="vVU-hj-UZz" secondAttribute="trailing" id="5e5-nq-Ie3"/>
                             <constraint firstItem="tuf-we-rFf" firstAttribute="leading" secondItem="vVU-hj-UZz" secondAttribute="leading" id="87h-vn-1bw"/>
-                            <constraint firstItem="RX1-pZ-Zup" firstAttribute="top" secondItem="VdL-qu-p4T" secondAttribute="bottom" constant="19" id="DG4-4v-woC"/>
+                            <constraint firstItem="RX1-pZ-Zup" firstAttribute="top" secondItem="VdL-qu-p4T" secondAttribute="bottom" constant="19" id="9j2-Vh-r0R"/>
                             <constraint firstItem="9v2-EV-W9u" firstAttribute="leading" secondItem="qWC-6Z-Wt3" secondAttribute="leading" id="EhT-Se-sLx"/>
-                            <constraint firstItem="VdL-qu-p4T" firstAttribute="centerX" secondItem="RX1-pZ-Zup" secondAttribute="centerX" id="JbM-bj-SDI"/>
+                            <constraint firstItem="qzm-Ua-igj" firstAttribute="leading" secondItem="eEa-LO-cTI" secondAttribute="leading" id="FIW-IQ-lZ7"/>
                             <constraint firstItem="tuf-we-rFf" firstAttribute="top" secondItem="6yw-XP-eET" secondAttribute="bottom" constant="8" symbolic="YES" id="O0T-Bj-Gah"/>
                             <constraint firstItem="qWC-6Z-Wt3" firstAttribute="centerX" secondItem="rvf-hW-Wi1" secondAttribute="centerX" id="O1d-cP-5EH"/>
                             <constraint firstItem="qWC-6Z-Wt3" firstAttribute="leading" secondItem="6yw-XP-eET" secondAttribute="leading" id="QAL-IW-LXT"/>
@@ -1274,12 +1267,11 @@
                             <constraint firstItem="9v2-EV-W9u" firstAttribute="leading" secondItem="rvf-hW-Wi1" secondAttribute="leadingMargin" constant="52" id="VXL-zf-GtT"/>
                             <constraint firstItem="vVU-hj-UZz" firstAttribute="leading" secondItem="eEa-LO-cTI" secondAttribute="leading" id="Vmn-rq-A3u"/>
                             <constraint firstItem="6yw-XP-eET" firstAttribute="leading" secondItem="tuf-we-rFf" secondAttribute="leading" id="YKa-qY-Rbb"/>
-                            <constraint firstItem="VdL-qu-p4T" firstAttribute="trailing" secondItem="eEa-LO-cTI" secondAttribute="trailing" id="dnG-2Y-n44"/>
                             <constraint firstItem="tuf-we-rFf" firstAttribute="trailing" secondItem="eEa-LO-cTI" secondAttribute="trailing" id="gYZ-0z-mfe"/>
-                            <constraint firstItem="VdL-qu-p4T" firstAttribute="top" secondItem="qzm-Ua-igj" secondAttribute="bottom" constant="8" symbolic="YES" id="i0l-nd-Mxi"/>
-                            <constraint firstItem="qzm-Ua-igj" firstAttribute="leading" secondItem="eEa-LO-cTI" secondAttribute="leading" id="mBJ-R5-oyt"/>
-                            <constraint firstItem="qzm-Ua-igj" firstAttribute="leading" secondItem="VdL-qu-p4T" secondAttribute="leading" id="ohH-Li-bO7"/>
+                            <constraint firstItem="RX1-pZ-Zup" firstAttribute="centerX" secondItem="rvf-hW-Wi1" secondAttribute="centerX" id="mB5-gu-WFv"/>
                             <constraint firstItem="9v2-EV-W9u" firstAttribute="top" secondItem="GMN-6u-xd6" secondAttribute="bottom" constant="64" id="omn-hK-LTf"/>
+                            <constraint firstItem="qzm-Ua-igj" firstAttribute="top" secondItem="eEa-LO-cTI" secondAttribute="bottom" constant="8" id="s9g-Oj-X13"/>
+                            <constraint firstItem="VdL-qu-p4T" firstAttribute="top" secondItem="qzm-Ua-igj" secondAttribute="bottom" constant="8" id="xZl-Up-D76"/>
                             <constraint firstItem="qWC-6Z-Wt3" firstAttribute="trailing" secondItem="tuf-we-rFf" secondAttribute="trailing" id="ydt-rr-kUt"/>
                         </constraints>
                     </view>
@@ -1534,45 +1526,52 @@
                                 <color key="textColor" red="1" green="0.99093529280000003" blue="0.96385461849999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m75-9f-lN3">
-                                <rect key="frame" x="34" y="239" width="123" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
-                                <color key="textColor" red="0.95286458870000001" green="0.94710373189999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Owe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHe-hC-A0c">
-                                <rect key="frame" x="34" y="267" width="102" height="21"/>
+                                <rect key="frame" x="53" y="337" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="24"/>
                                 <color key="textColor" red="0.94675475310000001" green="1" blue="0.97257856509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Owed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-53-2qu">
-                                <rect key="frame" x="34" y="296" width="102" height="21"/>
+                                <rect key="frame" x="34" y="407" width="140" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="24"/>
+                                <color key="textColor" red="0.92455252310000002" green="1" blue="0.96383091919999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnj-MP-nRD">
+                                <rect key="frame" x="21" y="478" width="140" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="24"/>
                                 <color key="textColor" red="0.92455252310000002" green="1" blue="0.96383091919999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qe-br-d3V">
-                                <rect key="frame" x="195" y="266" width="146" height="21"/>
+                                <rect key="frame" x="216" y="343" width="146" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCZ-sA-fFY">
-                                <rect key="frame" x="195" y="295" width="139" height="21"/>
+                                <rect key="frame" x="220" y="407" width="139" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxb-d4-Yie">
+                                <rect key="frame" x="220" y="478" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BK4-ni-9f8">
-                                <rect key="frame" x="195" y="237" width="119" height="21"/>
+                                <rect key="frame" x="215" y="266" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1606,6 +1605,13 @@
                                     <constraint firstAttribute="height" constant="107" id="hvZ-9U-8Si"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Incomes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m75-9f-lN3">
+                                <rect key="frame" x="34" y="256" width="115" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="24"/>
+                                <color key="textColor" red="0.95286458870000001" green="0.94710373189999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.35686274509803922" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1619,6 +1625,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="Home-30" selectedImage="Home-30" id="AjO-NS-L8Q"/>
                     <connections>
                         <outlet property="AvatarView" destination="thl-sd-z49" id="On2-U1-tpc"/>
+                        <outlet property="availableBalance" destination="mxb-d4-Yie" id="iSm-pY-ml4"/>
                         <outlet property="loggedUser" destination="huS-rb-sU5" id="aQ4-7J-HjG"/>
                         <outlet property="tmoneyLeft" destination="BK4-ni-9f8" id="J8x-PH-foX"/>
                         <outlet property="yOwe" destination="2Qe-br-d3V" id="dhx-x6-mUe"/>

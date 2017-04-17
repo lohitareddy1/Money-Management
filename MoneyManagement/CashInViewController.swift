@@ -114,6 +114,7 @@ class CashInViewController: UIViewController,UITableViewDelegate,UITableViewData
                         if((transaction["cashInType"] as! String) == "borrowed"){
                             transaction["cashOutType"] = "expense"
                             transaction["purpose"] = transaction["borrowedFrom"]
+                            transaction["date"] = transaction["borrowedDate"] as! Date
                         }
                         
                         

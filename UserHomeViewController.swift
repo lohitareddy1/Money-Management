@@ -15,6 +15,11 @@ class UserHomeViewController: UIViewController {
     @IBOutlet weak var loggedUser: UILabel!
     @IBOutlet weak var AvatarView: UIImageView!
     @IBOutlet weak var tmoneyLeft: UILabel!
+    @IBOutlet weak var availableBalance: UILabel!
+    var tbalance = 0.0
+    var youowe = 0.0
+    var youowed = 0.0
+    var available = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +36,7 @@ class UserHomeViewController: UIViewController {
                 }
             }
         }
-        retrieveTransactions()
+       retrieveTransactions()
         
     }
     
@@ -39,6 +44,7 @@ class UserHomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
     
     func retrieveTransactions() {
         print("triggered all transactions")
@@ -47,6 +53,8 @@ class UserHomeViewController: UIViewController {
         query.whereKey("cashInType", equalTo: "income")
         query.whereKey("isfuture", equalTo: false)
         query.whereKey("isrecurring", equalTo: false)
+        
+        
         query.findObjectsInBackground { ( transactions:[PFObject]?, err: Error?) in
             if err == nil {
                 print("Transactions", transactions ?? "transaction")
@@ -56,7 +64,9 @@ class UserHomeViewController: UIViewController {
                     tmoney += transaction["amount1"] as! Double
                 }
                 self.tmoneyLeft.text = "\(tmoney)$"
-                
+                self.tbalance = tmoney
+                self.available = (self.tbalance + self.youowed) - self.youowe
+                self.availableBalance.text = String(self.available)
             }
             else {
                 print("Error", err)
@@ -66,6 +76,7 @@ class UserHomeViewController: UIViewController {
         let query2 = PFQuery(className: "Transaction")
         query2.whereKey("userid", equalTo: PFUser.current()?.objectId)
         query2.whereKey("cashInType", equalTo: "borrowed")
+        query2.whereKey("settled", notEqualTo: true)
         query2.findObjectsInBackground { ( transactions:[PFObject]?, err: Error?) in
             if err == nil {
                 print("Transactions", transactions ?? "transaction")
@@ -75,16 +86,19 @@ class UserHomeViewController: UIViewController {
                     yowe += transaction["amount1"] as! Double
                 }
                 self.yOwe.text = "\(yowe)$"
-                
+                self.youowe = yowe
+                self.available = (self.tbalance + self.youowed) - self.youowe
+                self.availableBalance.text = String(self.available)
             }
             else {
                 print("Error", err)
             }
         }
-        
+
         let query3 = PFQuery(className: "Transaction")
         query3.whereKey("userid", equalTo: PFUser.current()?.objectId)
         query3.whereKey("cashOutType", equalTo: "lent")
+        query3.whereKey("settled", notEqualTo: true)
         query3.findObjectsInBackground { ( transactions:[PFObject]?, err: Error?) in
             if err == nil {
                 print("Transactions", transactions ?? "transaction")
@@ -94,13 +108,16 @@ class UserHomeViewController: UIViewController {
                     yowed += transaction["amount1"] as! Double
                 }
                 self.yOwed.text = "\(yowed)$"
-                
+                self.youowed = yowed
+                self.available = (self.tbalance + self.youowed) - self.youowe
+                self.availableBalance.text = String(self.available)
             }
             else {
                 print("Error", err)
             }
         }
     }
+ 
     
     /*
      // MARK: - Navigation

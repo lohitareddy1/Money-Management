@@ -12,20 +12,32 @@ import Parse
 class AccountSettingsViewController: UIViewController {
 
     @IBOutlet weak var name: UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+    
     @IBOutlet weak var password: UITextField!
-   // @IBOutlet var password: UIView!
+    // @IBOutlet var password: UIView!
     @IBOutlet weak var pnumber: UITextField!
     @IBOutlet weak var email: UITextField!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        name.text = PFUser.current()?.username
+        email.text = PFUser.current()?.email
+        if let number = (PFUser.current())?["phonenum"] {
+            pnumber.text = number as! String
+        }
+        password.text = PFUser.current()?.password
+    }
+
+    
     
    
     
@@ -38,6 +50,7 @@ class AccountSettingsViewController: UIViewController {
             PFUser.current()?.username=name1
         PFUser.current()?.email=email1
         PFUser.current()?.password=password1
+        PFUser.current()?["phonenum"] = pnumber1
         PFUser.current()?.saveInBackground(block: { (Success, err) in
             if Success{
                 print("user details updated")

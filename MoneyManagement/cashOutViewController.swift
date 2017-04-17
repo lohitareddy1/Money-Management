@@ -120,7 +120,7 @@ class cashOutViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         else if cashOutSelected == "expense" {
             query.whereKey("cashOutType", equalTo: of )
-            query.whereKey("isfuture", equalTo: false )
+            query.whereKey("isfuture", notEqualTo: true )
             query.addDescendingOrder("date")
             print(of)
         }
