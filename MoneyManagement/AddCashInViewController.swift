@@ -22,6 +22,8 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     @IBOutlet weak var from: UITextField!
     @IBOutlet weak var repayDate: UITextField!
     
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var datePickerVIew: UIView!
     @IBOutlet weak var isFuture: UISwitch!
     
     @IBOutlet weak var recurringSwitch: UISwitch!
@@ -32,8 +34,10 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     @IBOutlet weak var recurringLabel: UILabel!
     
     var reference:Bool=false
-    
-    
+    var incomeDateVar:Date!
+    var borrowedDateVar:Date!
+    var repayDateVar:Date!
+    var datepicked = "incomedate"
     var cashInTypes:[String] = ["income", "borrowed"]
     var RecureingTimes = ["Weekly", "Monthly", "Quaterly", "Yearly"]
     override func viewDidLoad() {
@@ -46,7 +50,19 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func borrowedDateClicked(_ sender: Any) {
+        var datepicked = "borroweddate"
+         borrowedDate.isHidden = true
+        repayDate.isHidden = false
+        datePickerVIew.isHidden = false
+    }
     
+    @IBAction func repayDateClicked(_ sender: Any) {
+        var datepicked = "repaydate"
+        borrowedDate.isHidden = true
+        incomeDate.isHidden = false
+        datePickerVIew.isHidden = false
+    }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return RecureingTimes[row]
@@ -62,7 +78,11 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
     
     
     override func viewWillAppear(_ animated: Bool) {
+        let tapper = UITapGestureRecognizer(target: self, action:#selector(AddCashInViewController.dismissKeyboard))
         
+        tapper.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tapper)
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/YYYY"
         incomeDate.text = formatter.string(from: Date())
@@ -86,7 +106,13 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
 
     }
-    
+    func dismissKeyboard() {
+        
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
+        view.endEditing(true)
+        
+    }
     @IBAction func cashInTypeValueChanged(_ sender: Any) {
         self.doChangesByCashInType()
     }
@@ -103,6 +129,33 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
                     BorrowedView.isHidden = true
         }
     }
+    @IBAction func incomeDateClicked(_ sender: Any) {
+        var datepicked = "income"
+        incomeDate.isHidden = true
+        datePickerVIew.isHidden = false
+    }
+    @IBAction func dateDoneClicked(_ sender: Any) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/YYYY"
+        if datepicked = "income"{
+        incomeDate.isHidden = true
+        incomeDate.text = formatter.string(from: datePicker.date)
+        incomeDateVar = datePicker.date
+        }
+        if datepicked = "borroweddate"{
+            borrowedDate.isHidden = false
+            borrowedDate.text = formatter.string(from: datePicker.date)
+            borrowedDateVar = datePicker.date
+            
+        }
+        if datepicked = "repaydate"{
+            repayDate.isHidden = false
+            repayDate.text = formatter.string(from: datePicker.date)
+            repayDateVar = datePicker.date
+           
+        }
+        datePickerVIew.isHidden = true
+    }
     
     @IBAction func addCashIn(_ sender: Any) {
         let transaction = PFObject(className: "Transaction")
@@ -117,7 +170,7 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
             
 
             
-            transaction["date"] =  formatter.date(from: incomeDate.text! )
+            transaction["date"] =  incomeDateVar
              print("date",transaction["date"])
             transaction["isfuture"] = isFuture.isOn
             transaction["isrecurring"] = recurringSwitch.isOn
@@ -127,11 +180,11 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         }
         else if transaction["cashInType"] as! String == "borrowed"  {
             transaction["borrowedFrom"] = from.text
-            transaction["borrowedDate"] = formatter.date(from: borrowedDate.text!);
+            transaction["borrowedDate"] = borrowedDateVar
             
             print("borrowedDate",transaction["borrowedDate"])
             
-            transaction["borrowedRepayDate"] = formatter.date(from: repayDate.text!);
+            transaction["borrowedRepayDate"] = repayDateVar
             print("borrowedRepayDate",transaction["borrowedRepayDate"])
             
         }
@@ -143,8 +196,10 @@ class AddCashInViewController: UIViewController,  UIPickerViewDelegate, UIPicker
         transaction.saveInBackground(block: { (success, error) -> Void in
             if( error == nil) {
                 print("transaction has been saved.", success)
+                self.displayAlertWithTitle("Success", message: "Cash In Transaction Added")
             }
             else {
+                self.displayAlertWithTitle("Something went wrong", message: "Transaction failed, Try again")
                 print("Error in addCashIn", error ?? "no error value came")
             }
         })

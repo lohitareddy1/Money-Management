@@ -44,12 +44,23 @@ class AddCashOutViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let tapper = UITapGestureRecognizer(target: self, action:#selector(AddCashOutViewController.dismissKeyboard))
+        
+        tapper.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tapper)
         self.navigationItem.title = "Add CashOut Transactions"
         self.navigationItem.titleView?.sizeToFit()
         doChangesByCashOutType()
         
     }
-
+    func dismissKeyboard() {
+        
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
+        view.endEditing(true)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

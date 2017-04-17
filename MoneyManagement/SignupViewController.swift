@@ -29,7 +29,21 @@ class SignupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let tapper = UITapGestureRecognizer(target: self, action:#selector(SignupViewController.dismissKeyboard))
+        
+        tapper.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tapper)
+    }
     
+    func dismissKeyboard() {
+        
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
+        view.endEditing(true)
+        
+    }
     @IBAction func signupAction(_ sender: Any) {
         
         if ( uname.text != nil && email.text != nil && password.text != nil && rePassword.text != nil ) {

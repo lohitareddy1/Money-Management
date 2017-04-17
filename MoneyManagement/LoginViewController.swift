@@ -32,9 +32,19 @@ class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       
+        let tapper = UITapGestureRecognizer(target: self, action:#selector(LoginViewController.dismissKeyboard))
+        
+        tapper.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tapper)
     }
-    
+    func dismissKeyboard() {
+        
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
+        view.endEditing(true)
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         
         loginBtn.layer.cornerRadius = 5
